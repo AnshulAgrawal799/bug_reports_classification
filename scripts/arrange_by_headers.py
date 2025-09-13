@@ -72,49 +72,183 @@ def clean_header_text(text: str) -> str:
 
 
 def group_by_exact_match(ocr_data: Dict[str, Dict]) -> Dict[str, List[str]]:
-    """Group files by exact normalized text match."""
+    """Group files by exact normalized text match and content patterns."""
     groups = defaultdict(list)
     
     for filename, data in ocr_data.items():
         normalized_text = clean_header_text(data['normalized_text'])
-        groups[normalized_text].append(filename)
+        
+        # Use content-based grouping instead of exact text matching
+        group_key = get_content_group_key(normalized_text)
+        groups[group_key].append(filename)
     
     return dict(groups)
 
 
+def get_content_group_key(normalized_text: str) -> str:
+    """Get a group key based on content patterns rather than exact text."""
+    if not normalized_text or normalized_text == "empty_header":
+        return "empty_headers"
+    
+    text_lower = normalized_text.lower()
+    
+    # Pattern-based grouping for common content types
+    import re
+    
+    # PBTNO patterns (transaction codes) - group by pattern, not exact code
+    if re.search(r'pbtno\d+', text_lower):
+        return "pbtno_transaction_pattern"
+    
+    # Time patterns - group by time format, not exact time
+    if re.search(r'\d{1,2}:\d{2}', text_lower):
+        return "time_based_content"
+    
+    # Welcome patterns
+    if 'welcome' in text_lower:
+        return "welcome_content"
+    
+    # Add sale patterns
+    if 'add sale' in text_lower:
+        return "add_sale_content"
+    
+    # Error patterns
+    if any(error_word in text_lower for error_word in ['error', 'failed', 'exception', 'timeout']):
+        return "error_content"
+    
+    # Connection patterns
+    if 'connection' in text_lower:
+        return "connection_content"
+    
+    # Rate card patterns
+    if 'rate card' in text_lower:
+        return "rate_card_content"
+    
+    # Stockout patterns
+    if 'stockout' in text_lower:
+        return "stockout_content"
+    
+    # Inventory patterns
+    if any(inv_word in text_lower for inv_word in ['inventory', 'stock', 'crate']):
+        return "inventory_content"
+    
+    # Product patterns
+    if any(prod_word in text_lower for prod_word in ['product', 'item', 'catalog']):
+        return "product_content"
+    
+    # Settings patterns
+    if any(settings_word in text_lower for settings_word in ['settings', 'preferences', 'configuration']):
+        return "settings_content"
+    
+    # Menu/Navigation patterns
+    if any(nav_word in text_lower for nav_word in ['menu', 'navigation', 'home', 'dashboard']):
+        return "navigation_content"
+    
+    # Form patterns
+    if any(form_word in text_lower for form_word in ['form', 'input', 'field', 'enter']):
+        return "form_content"
+    
+    # Calculator patterns
+    if 'calculator' in text_lower:
+        return "calculator_content"
+    
+    # Phone patterns
+    if any(phone_word in text_lower for phone_word in ['phone', 'call', 'contact']):
+        return "phone_content"
+    
+    # App store patterns
+    if any(store_word in text_lower for store_word in ['app store', 'play store', 'google play']):
+        return "app_store_content"
+    
+    # Financial patterns
+    if any(fin_word in text_lower for fin_word in ['financial', 'report', 'analytics', 'cash', 'summary']):
+        return "financial_content"
+    
+    # Weighing patterns
+    if any(weight_word in text_lower for weight_word in ['weighing', 'weight', 'scale']):
+        return "weighing_content"
+    
+    # Tracker patterns
+    if any(tracker_word in text_lower for tracker_word in ['tracker', 'status', 'running']):
+        return "tracker_content"
+    
+    # Roster patterns
+    if any(roster_word in text_lower for roster_word in ['roster', 'employee', 'staff']):
+        return "roster_content"
+    
+    # Bug report patterns
+    if any(bug_word in text_lower for bug_word in ['bug', 'describe', 'issue', 'report']):
+        return "bug_report_content"
+    
+    # If we can't categorize, try to extract meaningful words for grouping
+    meaningful_words = extract_meaningful_words(normalized_text)
+    if meaningful_words:
+        return f"misc_{meaningful_words[:20]}"
+    
+    # Default to unclassified
+    return "unclassified_content"
+
+
 def group_by_fuzzy_match(ocr_data: Dict[str, Dict], threshold: float = 0.8) -> Dict[str, List[str]]:
-    """Group files by fuzzy matching of normalized text."""
+    """Group files by fuzzy matching of normalized text with content-based grouping."""
     if not RAPIDFUZZ_AVAILABLE:
-        print("Warning: Fuzzy matching requested but rapidfuzz not available. Using exact matching.")
+        print("Warning: Fuzzy matching requested but rapidfuzz not available. Using content-based matching.")
         return group_by_exact_match(ocr_data)
     
-    groups = {}
-    processed = set()
+    # First, use content-based grouping to create initial groups
+    content_groups = group_by_exact_match(ocr_data)
     
-    for filename, data in ocr_data.items():
-        if filename in processed:
+    # Then, within each content group, use fuzzy matching to merge similar groups
+    final_groups = {}
+    processed_groups = set()
+    
+    for group_key, filenames in content_groups.items():
+        if group_key in processed_groups:
             continue
         
-        normalized_text = clean_header_text(data['normalized_text'])
-        group_key = f"group_{len(groups) + 1}_{normalized_text[:20]}"
-        groups[group_key] = [filename]
-        processed.add(filename)
+        # Start with this group
+        merged_group = filenames.copy()
+        processed_groups.add(group_key)
         
-        # Find similar texts
-        for other_filename, other_data in ocr_data.items():
-            if other_filename in processed:
+        # Find other groups with similar content
+        for other_group_key, other_filenames in content_groups.items():
+            if other_group_key in processed_groups or other_group_key == group_key:
                 continue
             
-            other_normalized = clean_header_text(other_data['normalized_text'])
-            
-            # Calculate similarity
-            similarity = fuzz.ratio(normalized_text, other_normalized) / 100.0
-            
-            if similarity >= threshold:
-                groups[group_key].append(other_filename)
-                processed.add(other_filename)
+            # Check if groups are similar using fuzzy matching on sample texts
+            if are_groups_similar(group_key, other_group_key, ocr_data, threshold):
+                merged_group.extend(other_filenames)
+                processed_groups.add(other_group_key)
+        
+        # Use the original group key or create a better one
+        final_groups[group_key] = merged_group
     
-    return groups
+    return final_groups
+
+
+def are_groups_similar(group1_key: str, group2_key: str, ocr_data: Dict, threshold: float) -> bool:
+    """Check if two groups are similar enough to merge."""
+    # Get sample texts from each group
+    group1_samples = []
+    group2_samples = []
+    
+    # Find sample files from each group (limit to avoid performance issues)
+    for filename, data in ocr_data.items():
+        normalized_text = clean_header_text(data['normalized_text'])
+        group_key = get_content_group_key(normalized_text)
+        
+        if group_key == group1_key and len(group1_samples) < 3:
+            group1_samples.append(normalized_text)
+        elif group_key == group2_key and len(group2_samples) < 3:
+            group2_samples.append(normalized_text)
+    
+    # Compare samples using fuzzy matching
+    for sample1 in group1_samples:
+        for sample2 in group2_samples:
+            similarity = fuzz.ratio(sample1, sample2) / 100.0
+            if similarity >= threshold:
+                return True
+    
+    return False
 
 
 def create_meaningful_group_names(groups: Dict[str, List[str]], ocr_data: Dict[str, Dict]) -> Dict[str, List[str]]:

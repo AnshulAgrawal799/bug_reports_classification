@@ -431,34 +431,54 @@ def main():
         unassigned_folder = output_dir / "_unassigned"
         if not args.dry_run:
             unassigned_folder.mkdir(parents=True, exist_ok=True)
-        for src in unassigned:
-            dest = unassigned_folder / src.name
-            action = "copy" if not args.move else "move"
-            if args.dry_run:
-                print(f"[DRY] {action} {src} -> {dest}")
-            else:
-                if src.is_file():
-                    if args.move:
-                        shutil.move(str(src), str(dest))
-                    else:
-                        shutil.copy2(str(src), str(dest))
-                else:
-                    print(f"[SKIP] Unassigned source is not a file: {src}")
-
-    # print summary
-    print("\n=== ARRANGE SUMMARY ===")
-    total_assigned = sum(v['count'] for v in summary.values())
-    print(f"Clusters processed: {len(summary)}")
-    print(f"Total assigned files: {total_assigned}")
-    print(
-        f"Unassigned files moved to: {str(output_dir / '_unassigned') if unassigned else 'None'}")
-    print(f"Missing ids (no file found): {len(missing_ids)}")
-    if missing_ids:
-        print("Example missing ids (cluster_id, id):")
-        for cluster_id, ident in missing_ids[:10]:
-            print("  ", cluster_id, ident)
-    print("Done.")
-
-
-if __name__ == "__main__":
-    main()
+        for ident in id_list:
+            ident_orig = str(ident)
+            ident = ident_orig.strip().lower()
+            chosen = []
+            if args.verbose:
+                print(
+                    f"[SEARCH] Cluster: {cluster_id}, ID: {ident_orig} (normalized: {ident})")
+                print(f"[SEARCH] Available files in {input_dir}:")
+                for f in input_dir.iterdir():
+                    print(f"    {f.name}")
+            # 1. Exact stem match
+            for fname in report_map:
+                if Path(fname).stem.lower() == ident:
+                    candidate = input_dir / report_map[fname]
+                    if candidate.exists():
+                        chosen.append(candidate)
+                        if args.verbose:
+                            print(
+                                f"[STEM MATCH] id {ident_orig} matched to filename '{report_map[fname]}'")
+                        break
+            # 2. Substring match (if not found by stem)
+            if not chosen:
+                substring_matches = []
+                for fname in report_map:
+                    if ident in fname.lower():
+                        candidate = input_dir / report_map[fname]
+                        if candidate.exists():
+                            substring_matches.append(candidate)
+                if len(substring_matches) == 1:
+                    chosen.append(substring_matches[0])
+                    if args.verbose:
+                        print(
+                            f"[SUBSTRING MATCH] id {ident_orig} matched to filename '{substring_matches[0].name}'")
+                elif len(substring_matches) > 1:
+                    if args.verbose:
+                        print(
+                            f"[SUBSTRING MULTI] id {ident_orig} matches multiple files: {[f.name for f in substring_matches]}")
+            # 3. Heuristic fallback
+            if not chosen:
+                found = find_matches_for_id(input_dir, ident, allowed_exts)
+                if args.verbose:
+                    print(
+                        f"[HEURISTIC] Matches found: {[f.name for f in found]}")
+                if found:
+                    chosen.extend(found)
+            if not chosen:
+                missing_ids.append((cluster_id, ident_orig))
+                if args.verbose:
+                    print(
+                        f"[MISSING] id {ident_orig} for cluster {cluster_id} -> no matching files found in {input_dir}")
+                continue
