@@ -6,6 +6,12 @@ This document explains how to use the `arrange_by_headers.py` script to automati
 
 The script takes screenshots and their corresponding OCR results, then groups similar screenshots together based on the normalized text extracted from their headers. This is useful for organizing large collections of mobile app screenshots by their screen types or content.
 
+## Quick Run Command
+
+```bash
+python scripts/arrange_by_headers.py input_screenshots outputs/ocr_results.csv outputs/arranged_by_headers --min-group-size 2 --verbose
+```
+
 ## Usage
 
 ### Basic Command

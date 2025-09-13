@@ -118,7 +118,7 @@ def group_by_fuzzy_match(ocr_data: Dict[str, Dict], threshold: float = 0.8) -> D
 
 
 def create_meaningful_group_names(groups: Dict[str, List[str]], ocr_data: Dict[str, Dict]) -> Dict[str, List[str]]:
-    """Create meaningful group names based on error messages, error types, and diagnostic patterns."""
+    """Create meaningful group names based on content analysis and patterns."""
     renamed_groups = {}
     
     for group_key, filenames in groups.items():
@@ -129,94 +129,123 @@ def create_meaningful_group_names(groups: Dict[str, List[str]], ocr_data: Dict[s
         sample_filename = filenames[0]
         normalized_text = clean_header_text(ocr_data[sample_filename]['normalized_text'])
         
-        # Create meaningful folder name based on error patterns and diagnostics
-        if not normalized_text or normalized_text == "empty_header":
-            folder_name = "empty_headers"
-        elif normalized_text == "short_text":
-            folder_name = "short_text"
+        # Analyze the content to determine the most appropriate category
+        folder_name = categorize_screenshot_content(normalized_text, ocr_data, filenames)
         
-        # Error Categories
-        elif "rate card version not found" in normalized_text:
-            folder_name = "rate_card_errors"
-        elif "enable stockout" in normalized_text:
-            folder_name = "stockout_settings"
-        elif "err_mysql_connection" in normalized_text or "mysql_connection" in normalized_text:
-            folder_name = "database_connection_errors"
-        elif "axioserror" in normalized_text or "request failed with status code" in normalized_text:
-            folder_name = "api_request_errors"
-        elif "unable to connect" in normalized_text or "please check your internet connection" in normalized_text:
-            folder_name = "network_connection_errors"
-        elif "connection restored" in normalized_text:
-            folder_name = "connection_restored"
-        elif any(word in normalized_text for word in ["error", "failed", "exception"]):
-            folder_name = "general_errors"
-        
-        # Functional Categories
-        elif "welcome" in normalized_text:
-            folder_name = "welcome_screens"
-        elif "add sale" in normalized_text:
-            folder_name = "add_sale_screens"
-        elif "receive supply order" in normalized_text or "receive my inventory" in normalized_text:
-            folder_name = "inventory_receiving"
-        elif "morning" in normalized_text or "evening" in normalized_text:
-            folder_name = "time_based_screens"
-        elif "pbtno" in normalized_text or "pbtn" in normalized_text:
-            folder_name = "transaction_screens"
-        elif "sults" in normalized_text and "ailenev" in normalized_text:
-            folder_name = "sults_ailenev_screens"
-        elif any(word in normalized_text for word in ["inventory", "stock", "crate"]):
-            folder_name = "inventory_management"
-        elif "tracker status" in normalized_text or "running started" in normalized_text:
-            folder_name = "tracker_status"
-        elif "drafts" in normalized_text:
-            folder_name = "draft_screens"
-        elif "weekly roster entry" in normalized_text:
-            folder_name = "roster_management"
-        elif "bluetooth weighing machine" in normalized_text:
-            folder_name = "hardware_settings"
-        elif "cash summary" in normalized_text:
-            folder_name = "financial_reports"
-        elif "closing stock" in normalized_text or "stock varian" in normalized_text:
-            folder_name = "stock_reports"
-        elif "product weight amount" in normalized_text:
-            folder_name = "product_management"
-        elif "weighing machine" in normalized_text:
-            folder_name = "weighing_system"
-        
-        # UI/UX Categories
-        elif "google play" in normalized_text:
-            folder_name = "app_store_screens"
-        elif "phone" in normalized_text and "incoming call" in normalized_text:
-            folder_name = "phone_call_screens"
-        elif "calculator" in normalized_text:
-            folder_name = "calculator_screens"
-        elif "truecaller" in normalized_text:
-            folder_name = "truecaller_screens"
-        
-        # Content Categories
-        elif any(word in normalized_text for word in ["potato", "tomato", "onion", "carrot", "vegetable", "fruit"]):
-            folder_name = "product_catalog"
-        elif any(word in normalized_text for word in ["arai keerai", "tamato", "cash bag"]):
-            folder_name = "product_items"
-        
-        else:
-            # Use first 30 characters of normalized text, replace spaces with underscores
-            folder_name = normalized_text[:30].replace(" ", "_").replace("/", "_").replace("\\", "_")
-            # Remove any remaining problematic characters
-            folder_name = "".join(c for c in folder_name if c.isalnum() or c in "_-")
-            if not folder_name:
-                folder_name = "other_screens"
-        
-        # Add count suffix if duplicate
-        base_name = folder_name
+        # Handle duplicate folder names
+        original_folder_name = folder_name
         counter = 1
         while folder_name in renamed_groups:
-            folder_name = f"{base_name}_{counter}"
+            folder_name = f"{original_folder_name}_{counter}"
             counter += 1
         
         renamed_groups[folder_name] = filenames
     
     return renamed_groups
+
+
+def categorize_screenshot_content(normalized_text: str, ocr_data: Dict, filenames: List[str]) -> str:
+    """Categorize screenshot content into meaningful groups."""
+    
+    # If no meaningful text, check if it's truly empty or just garbled
+    if not normalized_text or normalized_text == "empty_header":
+        return "empty_or_unreadable_headers"
+    
+    if normalized_text == "short_text":
+        return "minimal_text_content"
+    
+    # Convert to lowercase for pattern matching
+    text_lower = normalized_text.lower()
+    
+    # ERROR CATEGORIES - Most important to identify first
+    if "rate card version not found" in text_lower:
+        return "rate_card_errors"
+    elif "mysql" in text_lower and ("connection" in text_lower or "failed" in text_lower):
+        return "database_connection_errors"
+    elif "axioserror" in text_lower or ("status code" in text_lower and "error" in text_lower):
+        return "api_request_errors"
+    elif "unable to connect" in text_lower or ("connection" in text_lower and "error" in text_lower):
+        return "network_connection_errors"
+    elif "connection restored" in text_lower or "reconnected" in text_lower:
+        return "connection_restored"
+    elif any(error_word in text_lower for error_word in ["error", "failed", "exception", "timeout"]):
+        return "general_errors"
+    
+    # FUNCTIONAL CATEGORIES - Core app functionality
+    elif "add sale" in text_lower or "new sale" in text_lower:
+        return "add_sale_screens"
+    elif "enable stockout" in text_lower or "stockout" in text_lower:
+        return "stockout_settings"
+    elif "welcome" in text_lower or "login" in text_lower or "sign in" in text_lower:
+        return "welcome_login_screens"
+    elif "transaction" in text_lower or "payment" in text_lower or "checkout" in text_lower:
+        return "transaction_screens"
+    elif "inventory" in text_lower and ("manage" in text_lower or "list" in text_lower):
+        return "inventory_management"
+    elif "inventory" in text_lower and "receiv" in text_lower:
+        return "inventory_receiving"
+    elif "product" in text_lower and ("catalog" in text_lower or "list" in text_lower):
+        return "product_catalog"
+    elif "product" in text_lower and ("item" in text_lower or "detail" in text_lower):
+        return "product_items"
+    elif "roster" in text_lower or "employee" in text_lower:
+        return "roster_management"
+    elif "time" in text_lower or "clock" in text_lower or "schedule" in text_lower:
+        return "time_based_screens"
+    elif "phone" in text_lower or "call" in text_lower or "contact" in text_lower:
+        return "phone_call_screens"
+    elif "app store" in text_lower or "play store" in text_lower:
+        return "app_store_screens"
+    elif "financial" in text_lower or "report" in text_lower or "analytics" in text_lower:
+        return "financial_reports"
+    elif "weighing" in text_lower or "weight" in text_lower or "scale" in text_lower:
+        return "weighing_system"
+    elif "tracker" in text_lower or "status" in text_lower:
+        return "tracker_status"
+    elif "bug" in text_lower or "describe" in text_lower or "issue" in text_lower:
+        return "bug_report_screens"
+    
+    # UI/NAVIGATION CATEGORIES
+    elif any(nav_word in text_lower for nav_word in ["menu", "navigation", "home", "dashboard"]):
+        return "navigation_screens"
+    elif any(settings_word in text_lower for settings_word in ["settings", "preferences", "configuration"]):
+        return "settings_screens"
+    elif any(search_word in text_lower for search_word in ["search", "filter", "find"]):
+        return "search_screens"
+    elif any(list_word in text_lower for list_word in ["list", "table", "grid", "view"]):
+        return "list_view_screens"
+    elif any(form_word in text_lower for form_word in ["form", "input", "field", "enter"]):
+        return "form_input_screens"
+    
+    # If we can't categorize, try to extract meaningful words
+    meaningful_words = extract_meaningful_words(normalized_text)
+    if meaningful_words:
+        return f"misc_{meaningful_words[:30]}"
+    else:
+        return "unclassified_screens"
+
+
+def extract_meaningful_words(text: str) -> str:
+    """Extract meaningful words from garbled OCR text."""
+    import re
+    
+    # Remove numbers, special characters, and very short words
+    words = re.findall(r'\b[a-zA-Z]{3,}\b', text.lower())
+    
+    # Filter out common OCR noise words
+    noise_words = {'the', 'and', 'for', 'are', 'but', 'not', 'you', 'all', 'can', 'had', 'her', 'was', 'one', 'our', 'out', 'day', 'get', 'has', 'him', 'his', 'how', 'its', 'may', 'new', 'now', 'old', 'see', 'two', 'way', 'who', 'boy', 'did', 'man', 'men', 'put', 'say', 'she', 'too', 'use'}
+    
+    meaningful_words = [word for word in words if word not in noise_words and len(word) > 2]
+    
+    # Return the most common meaningful words
+    if meaningful_words:
+        # Count word frequency
+        from collections import Counter
+        word_counts = Counter(meaningful_words)
+        most_common = word_counts.most_common(3)
+        return "_".join([word for word, count in most_common])
+    
+    return ""
 
 
 def find_image_file(input_dir: Path, filename: str, allowed_exts: Set[str]) -> Path:
