@@ -26,6 +26,7 @@ import sys
 from collections import defaultdict, Counter
 from pathlib import Path
 from typing import Dict, List, Set, Tuple
+from urllib.parse import unquote, urlparse
 
 try:
     from rapidfuzz import fuzz
@@ -418,7 +419,7 @@ def arrange_by_headers(input_dir: Path, ocr_csv: Path, output_dir: Path,
                       use_fuzzy: bool = False, similarity_threshold: float = 0.8,
                       min_group_size: int = 2, allowed_exts: Set[str] = None,
                       move_files: bool = False, dry_run: bool = False, 
-                      verbose: bool = False) -> None:
+                      verbose: bool = False, firebase_json: Path = None) -> None:
     """Main function to arrange screenshots by headers."""
     
     if allowed_exts is None:
@@ -467,6 +468,7 @@ def arrange_by_headers(input_dir: Path, ocr_csv: Path, output_dir: Path,
     
     total_processed = 0
     missing_files = []
+    filename_to_category: Dict[str, str] = {}
     
     for group_name, filenames in groups.items():
         group_folder = output_dir / group_name
@@ -499,6 +501,8 @@ def arrange_by_headers(input_dir: Path, ocr_csv: Path, output_dir: Path,
                         shutil.copy2(str(source_file), str(dest_file))
                     
                     total_processed += 1
+                    # Record mapping from filename to derived category
+                    filename_to_category[source_file.name] = group_name
                     if verbose:
                         print(f"  {action.title()}d: {source_file.name}")
                         
@@ -520,7 +524,83 @@ def arrange_by_headers(input_dir: Path, ocr_csv: Path, output_dir: Path,
         for group_name, filename in missing_files[:10]:
             print(f"  {group_name}: {filename}")
     
+    # Optionally update Firebase export JSON with categories
+    if firebase_json and not dry_run:
+        try:
+            _update_firebase_export_categories(firebase_json, filename_to_category, verbose)
+        except Exception as e:
+            print(f"Warning: Failed to update Firebase export JSON: {e}")
     print("Done.")
+
+
+def _extract_filename_from_url(url: str) -> str:
+    """Extract the filename from a Firebase Storage URL (URL-decoded, without query)."""
+    try:
+        parsed = urlparse(url)
+        path = parsed.path  # e.g., /v0/b/.../o/bug_reports%2Fscaled_123.jpg
+        # filename is the last segment after '/'
+        last_segment = path.rsplit('/', 1)[-1]
+        # URLs often encode folder prefix like bug_reports%2F<filename>
+        decoded = unquote(last_segment)
+        if '%2F' in last_segment:
+            decoded = unquote(last_segment)
+        # If there is still a folder prefix like 'bug_reports/<file>' keep only basename
+        if '/' in decoded:
+            decoded = decoded.rsplit('/', 1)[-1]
+        # Strip any query params if present (already separated by urlparse), but be safe
+        if '?' in decoded:
+            decoded = decoded.split('?', 1)[0]
+        return decoded
+    except Exception:
+        return ""
+
+
+def _update_firebase_export_categories(firebase_json_path: Path, filename_to_category: Dict[str, str], verbose: bool = False) -> None:
+    """Open the Firebase RTDB export JSON and write category fields based on attachment filenames."""
+    if verbose:
+        print(f"Updating categories in JSON: {firebase_json_path}")
+    with open(firebase_json_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    updates = 0
+    for key, entry in data.items():
+        try:
+            attachments = entry.get('attachments', []) or []
+            found_category = None
+            for url in attachments:
+                fname = _extract_filename_from_url(url)
+                if not fname:
+                    continue
+                # Direct match
+                if fname in filename_to_category:
+                    found_category = filename_to_category[fname]
+                    break
+                # Try with and without a common 'bug_reports_' prefix
+                if fname.startswith('bug_reports_'):
+                    alt = fname[len('bug_reports_'):]
+                    if alt in filename_to_category:
+                        found_category = filename_to_category[alt]
+                        break
+                else:
+                    alt = f"bug_reports_{fname}"
+                    if alt in filename_to_category:
+                        found_category = filename_to_category[alt]
+                        break
+            if found_category:
+                if entry.get('category', '') != found_category:
+                    entry['category'] = found_category
+                    updates += 1
+        except Exception:
+            continue
+
+    if updates:
+        with open(firebase_json_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        if verbose:
+            print(f"Updated category for {updates} records.")
+    else:
+        if verbose:
+            print("No category updates were applied (no matching attachments found).")
 
 
 def main():
@@ -547,6 +627,8 @@ def main():
                        help="Don't actually copy/move; just print actions")
     parser.add_argument('--verbose', action='store_true', 
                        help='Verbose logging')
+    parser.add_argument('--firebase-json', type=Path, default=None,
+                       help='Path to Firebase RTDB export JSON to update categories in-place')
     
     args = parser.parse_args()
     
@@ -583,7 +665,8 @@ def main():
         allowed_exts=allowed_exts,
         move_files=args.move,
         dry_run=args.dry_run,
-        verbose=args.verbose
+        verbose=args.verbose,
+        firebase_json=args.firebase_json
     )
 
 

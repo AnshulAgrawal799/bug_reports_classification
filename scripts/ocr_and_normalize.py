@@ -9,10 +9,14 @@ def ocr_image(image_path, lang='tam+eng'):
         img = Image.open(image_path)
         ocr_result = pytesseract.image_to_data(
             img, lang=lang, output_type=pytesseract.Output.DICT)
-        text = ' '.join([ocr_result['text'][i] for i in range(
-            len(ocr_result['text'])) if int(ocr_result['conf'][i]) > 0])
-        confidences = [int(conf)
-                       for conf in ocr_result['conf'] if conf.isdigit()]
+        text = ' '.join([
+            ocr_result['text'][i]
+            for i in range(len(ocr_result['text']))
+            if str(ocr_result['conf'][i]).isdigit() and int(ocr_result['conf'][i]) > 0
+        ])
+        confidences = [
+            int(conf) for conf in ocr_result['conf'] if str(conf).isdigit()
+        ]
         avg_conf = sum(confidences) / len(confidences) if confidences else 0
         return text, avg_conf
     except Exception as e:
