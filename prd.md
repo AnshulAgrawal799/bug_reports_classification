@@ -47,6 +47,31 @@ A small, production-ready Python pipeline to process mobile app screenshots, ext
    - Allows assigning or editing canonical `screen_id` for each cluster
    - Allows merging clusters and updating labels (writes changes to CSV & JSON)
 
+## Autonomous Image Categorization Pipeline
+
+### New Addition: Fully Autonomous Pipeline
+
+A new `run_pipeline.py` script provides a fully autonomous image categorization pipeline that:
+
+- Takes only the Firebase export JSON as input
+- Downloads all images from Firebase Storage URLs
+- Performs OCR on downloaded images
+- Categorizes images using intelligent heuristics
+- Produces final JSON with all records categorized
+- Requires no manual intervention or existing OCR data
+
+#### Usage
+```bash
+python run_pipeline.py [--input INPUT_FILE] [--output OUTPUT_FILE] [--verbose] [--dry-run]
+```
+
+#### Features
+- **Single Source of Truth**: Uses only the provided JSON file
+- **Autonomous Downloads**: Downloads images to `input_screenshots/` directory
+- **Multi-Strategy Categorization**: OCR text analysis, filename patterns, metadata analysis
+- **Robust Error Handling**: Defensive programming with comprehensive logging
+- **Complete Coverage**: Every record guaranteed to have a category field
+
 ## Pipeline Stages
 
 1. **Preprocessing & Header Detection**
