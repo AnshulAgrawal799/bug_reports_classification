@@ -2,7 +2,7 @@
 
 ## Overview
 
-A small, production-ready Python pipeline to process mobile app screenshots, extract screen headings (Tamil + English), classify and cluster screens, and provide a minimal review UI for human-in-the-loop labeling. All data is stored locally for easy testing and reproducibility. The pipeline is modular, easy to run, and requires no database or cloud setup.
+A small, production-ready Python pipeline to process mobile app screenshots, extract screen headings (Tamil + English), classify and cluster screens. All data is stored locally for easy testing and reproducibility. The pipeline is modular, easy to run, and requires no database or cloud setup.
 
 ## Goals
 
