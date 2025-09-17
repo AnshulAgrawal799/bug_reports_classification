@@ -3769,26 +3769,39 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-16-10-43-16-37_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=4a72db00-7eaf-43c0-8e34-450bbece29b4"
     ],
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-16 10:43:35.089911",
     "email": "",
     "hasResolved": false,
     "logFile": "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2F16-09-2025.txt?alt=media&token=8dc6d05f-4a78-4fa8-a112-2c22e8668466",
     "name": "+917358277460",
-    "userId": "6576",
-    "category": "unclear_insufficient_info"
+    "userId": "6576"
   },
   "-O_Giedq1U96nex6GYC-": {
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250916_142326.jpg?alt=media&token=6ce4a7ce-3075-4b44-b5e0-0472093d5a89"
     ],
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-16 14:30:41.997415",
     "email": "",
     "hasResolved": false,
     "logFile": "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2F16-09-2025.txt?alt=media&token=421a653f-f409-47cb-a5cc-02286a94ce71",
     "name": "+918838061134",
-    "userId": "9548",
+    "userId": "9548"
+  },
+  "-O_LEmHSa1-mk42mwxvV": {
+    "attachments": [
+      "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0917_112631.jpg?alt=media&token=54e6e7a5-dd23-40bc-984d-d52d30c66b0a"
+    ],
+    "comment": "",
+    "createdAt": "2025-09-17 11:27:00.609277",
+    "email": "",
+    "hasResolved": false,
+    "logFile": "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2F17-09-2025.txt?alt=media&token=71b3ad6c-8667-414f-9f01-1010769db92a",
+    "name": "+919345975400",
+    "userId": "1932",
     "category": "unclear_insufficient_info"
   }
 }
