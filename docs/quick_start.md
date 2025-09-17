@@ -57,8 +57,8 @@ python scripts/arrange_by_headers.py input_screenshots outputs/ocr_results.csv o
 ```
 
 - Groups screenshots based on their header content (OCR text) instead of CLIP clusters
-- Creates meaningful folder names like `rate_card_errors`, `add_sale_screens`, `welcome_login_screens`
-- Useful for organizing by error types, functionality, and screen content
+- Uses a problem-focused taxonomy for final categorization via `config/categories.json` and `pipeline/mapping_rules.py`
+- Useful for organizing by issue type (e.g., connectivity, authentication, performance, UI/UX)
 - Output is placed in `outputs/arranged_by_headers` with content-based subfolders
 
 ## Next Steps

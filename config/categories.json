@@ -1,0 +1,62 @@
+[
+  {
+    "id": "functional_errors",
+    "name": "Functional Errors",
+    "description": "Core app functionality is broken or not working as expected."
+  },
+  {
+    "id": "ui_ux_issues",
+    "name": "UI/UX Issues",
+    "description": "Visual or user experience problems that affect usability without fully breaking functionality."
+  },
+  {
+    "id": "performance_issues",
+    "name": "Performance Issues",
+    "description": "The app is slow, unresponsive, or consumes excessive resources."
+  },
+  {
+    "id": "connectivity_problems",
+    "name": "Connectivity Problems",
+    "description": "Issues related to network connectivity, API failures, or data synchronization."
+  },
+  {
+    "id": "authentication_access",
+    "name": "Authentication & Access",
+    "description": "Problems with login, logout, sessions, permissions, or account access."
+  },
+  {
+    "id": "data_integrity_issues",
+    "name": "Data Integrity Issues",
+    "description": "Data inaccuracies, corruption, duplication, or inconsistency."
+  },
+  {
+    "id": "crash_stability",
+    "name": "Crash & Stability",
+    "description": "App crashes, force closes, or becomes completely unusable."
+  },
+  {
+    "id": "integration_failures",
+    "name": "Integration Failures",
+    "description": "Problems with external services, hardware, or third-party integrations."
+  },
+  {
+    "id": "configuration_settings",
+    "name": "Configuration & Settings",
+    "description": "Issues with app settings, preferences, or configuration options."
+  },
+  {
+    "id": "compatibility_issues",
+    "name": "Compatibility Issues",
+    "description": "Problems specific to devices, OS versions, browsers, or environments."
+  },
+  {
+    "id": "feature_requests",
+    "name": "Feature Requests",
+    "description": "User suggestions for new functionality or improvements (not bugs)."
+  },
+  {
+    "id": "unclear_insufficient_info",
+    "name": "Unclear/Insufficient Info",
+    "description": "Reports lacking enough detail to categorize or understand the issue."
+  }
+]

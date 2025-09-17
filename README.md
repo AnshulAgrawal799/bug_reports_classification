@@ -74,36 +74,25 @@ python run_pipeline.py --input data.json --output results.json --verbose --dry-r
 5. **Output Generation**: Creates final JSON with all records containing category fields
 6. **Statistics**: Reports processing statistics and success rates
 
-## Category Types
+## Category Taxonomy
 
-The pipeline assigns one of the following categories:
+The pipeline uses a problem-focused taxonomy defined in `config/categories.json`.
 
-### OCR-Based Categories
-- `login_screens` - Sign-in, authentication screens
-- `error_screens` - Error messages, exceptions
-- `navigation_screens` - Menus, home screens, navigation
-- `form_screens` - Input forms, data entry
-- `loading_screens` - Loading, processing screens
-- `transaction_screens` - Payment, transaction screens
-- `success_screens` - Success, confirmation screens
+Canonical category IDs:
+- `functional_errors`
+- `ui_ux_issues`
+- `performance_issues`
+- `connectivity_problems`
+- `authentication_access`
+- `data_integrity_issues`
+- `crash_stability`
+- `integration_failures`
+- `configuration_settings`
+- `compatibility_issues`
+- `feature_requests`
+- `unclear_insufficient_info`
 
-### Filename-Based Categories
-- `error_screenshots` - Screenshots with error indicators
-- `login_screenshots` - Screenshots with login indicators
-- `navigation_screenshots` - Screenshots with navigation indicators
-- `general_screenshots` - Other screenshot files
-- `image_files` - General image files
-- `log_files` - Text log files
-
-### Metadata-Based Categories
-- `reported_issues` - Records with issue-related comments
-- `feature_requests` - Records with feature request comments
-- `test_data` - Records from test users
-
-### Fallback Categories
-- `no_attachments` - Records without any attachments
-- `uncategorized` - Records that couldn't be categorized
-- `processing_error` - Records that failed during processing
+Deterministic heuristics in `pipeline/mapping_rules.py` map OCR text, filenames, and comments to these categories. The same rules are applied in both `run_pipeline.py` and `scripts/populate_empty_categories.py` for consistency.
 
 ## Output Format
 
@@ -113,7 +102,7 @@ The output JSON maintains the same structure as the input but ensures every reco
 {
   "-OY04XVHntk9JZKXRYDE": {
     "attachments": ["https://firebasestorage.googleapis.com/..."],
-    "category": "login_screens",
+    "category": "authentication_access",
     "comment": "",
     "createdAt": "2025-08-19 12:18:54.946506",
     "email": "",
@@ -140,7 +129,7 @@ The pipeline is designed to be robust:
 - Network failures are logged but don't stop processing
 - Invalid images are skipped with warnings
 - OCR failures fall back to filename/metadata analysis
-- Processing errors result in `processing_error` category
+- Processing errors result in `unclear_insufficient_info` category (with detailed logs in pipeline.log)
 - All records are guaranteed to have a category field
 
 ## Troubleshooting

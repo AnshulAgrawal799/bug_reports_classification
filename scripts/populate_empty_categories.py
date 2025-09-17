@@ -29,9 +29,9 @@ from urllib.parse import unquote, urlparse
 sys.path.append(str(Path(__file__).parent))
 from arrange_by_headers import (
     load_ocr_results, 
-    categorize_screenshot_content,
     clean_header_text
 )
+from pipeline.mapping_rules import categorize_record as categorize_with_rules
 
 
 def create_exact_duplicate(original_file: Path, output_file: Path, verbose: bool = False) -> None:
@@ -68,17 +68,22 @@ def extract_filename_from_url(url: str) -> str:
         return ""
 
 
-def get_category_from_filename(filename: str, ocr_data: Dict) -> str:
-    """Get category for a filename using existing categorization logic."""
-    if not filename or filename not in ocr_data:
+def get_category_from_filename(filename: str, ocr_data: Dict, entry: Dict) -> str:
+    """Get category for a filename using deterministic mapping rules with OCR when available."""
+    if not filename:
         return None
-    
-    # Get the normalized text for this filename
-    normalized_text = clean_header_text(ocr_data[filename]['normalized_text'])
-    
-    # Use the existing categorization logic
-    category = categorize_screenshot_content(normalized_text, ocr_data, [filename])
-    
+    ocr_texts = []
+    if filename in ocr_data:
+        # prefer normalized text if available; fall back to raw
+        norm = clean_header_text(ocr_data[filename].get('normalized_text', ''))
+        raw = ocr_data[filename].get('ocr_text', '')
+        # Avoid placeholders as texts
+        if norm and norm not in ("empty_header", "short_text"):
+            ocr_texts.append(norm)
+        if raw and raw != norm:
+            ocr_texts.append(raw)
+    # Use mapping rules with available signals
+    category = categorize_with_rules(entry, ocr_texts=ocr_texts, filenames=[filename])
     return category
 
 
@@ -89,7 +94,7 @@ def get_fallback_category(entry: Dict, attachments: List[str], verbose: bool = F
     """
     # Check if there are attachments
     if not attachments:
-        return "no_attachments"
+        return "unclear_insufficient_info"
     
     # Analyze attachment URLs for patterns
     for url in attachments:
@@ -101,29 +106,31 @@ def get_fallback_category(entry: Dict, attachments: List[str], verbose: bool = F
         
         # Pattern-based categorization from filename
         if 'screenshot' in filename_lower:
-            # Try to infer from screenshot naming patterns
+            # Try to infer from screenshot naming patterns (map to new taxonomy)
             if 'error' in filename_lower or 'exception' in filename_lower:
-                return "error_screenshots"
+                return "functional_errors"
             elif 'login' in filename_lower or 'signin' in filename_lower:
-                return "login_screenshots"
+                return "authentication_access"
             elif 'menu' in filename_lower or 'home' in filename_lower:
-                return "navigation_screenshots"
+                return "ui_ux_issues"
             else:
-                return "general_screenshots"
+                return "unclear_insufficient_info"
         
         # File type patterns
         if filename_lower.endswith(('.jpg', '.jpeg', '.png', '.gif')):
-            return "image_attachments"
+            # Images without other signals -> unclear
+            return "unclear_insufficient_info"
         elif filename_lower.endswith('.txt'):
-            return "log_files"
+            # Logs without context -> unclear
+            return "unclear_insufficient_info"
     
     # Check other metadata for clues
     comment = entry.get('comment', '').lower()
     if comment:
-        if any(error_word in comment for error_word in ['error', 'bug', 'issue', 'problem']):
-            return "reported_issues"
-        elif any(feature_word in comment for feature_word in ['feature', 'request', 'enhancement']):
-            return "feature_requests"
+        # Try deterministic rules directly from comment
+        cat = categorize_with_rules(entry, ocr_texts=[], filenames=[])
+        if cat:
+            return cat
     
     # Check creation date patterns (if useful for categorization)
     created_at = entry.get('createdAt', '')
@@ -134,11 +141,10 @@ def get_fallback_category(entry: Dict, attachments: List[str], verbose: bool = F
     # Check if user info suggests test data
     name = entry.get('name', '')
     email = entry.get('email', '')
-    if 'test' in name.lower() or 'test' in email.lower():
-        return "test_data"
+    # No special test-data bucket in new taxonomy; keep unclear
     
     # Default fallback for records that can't be categorized
-    return "missing_ocr_data"
+    return "unclear_insufficient_info"
 
 
 def populate_empty_categories_in_duplicate(duplicate_file: Path, ocr_data: Dict, 
@@ -178,7 +184,7 @@ def populate_empty_categories_in_duplicate(duplicate_file: Path, ocr_data: Dict,
                     continue
                 
                 # Try direct match first
-                category = get_category_from_filename(filename, ocr_data)
+                category = get_category_from_filename(filename, ocr_data, entry)
                 if category:
                     found_category = category
                     break
@@ -186,13 +192,13 @@ def populate_empty_categories_in_duplicate(duplicate_file: Path, ocr_data: Dict,
                 # Try with and without 'bug_reports_' prefix
                 if filename.startswith('bug_reports_'):
                     alt_filename = filename[len('bug_reports_'):]
-                    category = get_category_from_filename(alt_filename, ocr_data)
+                    category = get_category_from_filename(alt_filename, ocr_data, entry)
                     if category:
                         found_category = category
                         break
                 else:
                     alt_filename = f"bug_reports_{filename}"
-                    category = get_category_from_filename(alt_filename, ocr_data)
+                    category = get_category_from_filename(alt_filename, ocr_data, entry)
                     if category:
                         found_category = category
                         break
@@ -203,7 +209,7 @@ def populate_empty_categories_in_duplicate(duplicate_file: Path, ocr_data: Dict,
             
             # Ensure we always have a category
             if not found_category:
-                found_category = "uncategorized"
+                found_category = "unclear_insufficient_info"
             
             # Update the category
             if verbose:
@@ -219,7 +225,7 @@ def populate_empty_categories_in_duplicate(duplicate_file: Path, ocr_data: Dict,
                 print(f"  Error processing record {key}: {e}")
             # Ensure even error cases get a category
             if not dry_run:
-                entry['category'] = "uncategorized"
+                entry['category'] = "unclear_insufficient_info"
             updates += 1
             continue
     

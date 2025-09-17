@@ -284,80 +284,80 @@ def categorize_screenshot_content(normalized_text: str, ocr_data: Dict, filename
     
     # If no meaningful text, check if it's truly empty or just garbled
     if not normalized_text or normalized_text == "empty_header":
-        return "empty_or_unreadable_headers"
+        return "unclear_insufficient_info"
     
     if normalized_text == "short_text":
-        return "minimal_text_content"
+        return "unclear_insufficient_info"
     
     # Convert to lowercase for pattern matching
     text_lower = normalized_text.lower()
     
     # ERROR CATEGORIES - Most important to identify first
     if "rate card version not found" in text_lower:
-        return "rate_card_errors"
+        return "functional_errors"
     elif "mysql" in text_lower and ("connection" in text_lower or "failed" in text_lower):
-        return "database_connection_errors"
+        return "connectivity_problems"
     elif "axioserror" in text_lower or ("status code" in text_lower and "error" in text_lower):
-        return "api_request_errors"
+        return "connectivity_problems"
     elif "unable to connect" in text_lower or ("connection" in text_lower and "error" in text_lower):
-        return "network_connection_errors"
+        return "connectivity_problems"
     elif "connection restored" in text_lower or "reconnected" in text_lower:
-        return "connection_restored"
+        return "connectivity_problems"
     elif any(error_word in text_lower for error_word in ["error", "failed", "exception", "timeout"]):
-        return "general_errors"
+        return "functional_errors"
     
     # FUNCTIONAL CATEGORIES - Core app functionality
     elif "add sale" in text_lower or "new sale" in text_lower:
-        return "add_sale_screens"
+        return "functional_errors"
     elif "enable stockout" in text_lower or "stockout" in text_lower:
-        return "stockout_settings"
+        return "configuration_settings"
     elif "welcome" in text_lower or "login" in text_lower or "sign in" in text_lower:
-        return "welcome_login_screens"
+        return "authentication_access"
     elif "transaction" in text_lower or "payment" in text_lower or "checkout" in text_lower:
-        return "transaction_screens"
+        return "integration_failures"
     elif "inventory" in text_lower and ("manage" in text_lower or "list" in text_lower):
-        return "inventory_management"
+        return "functional_errors"
     elif "inventory" in text_lower and "receiv" in text_lower:
-        return "inventory_receiving"
+        return "functional_errors"
     elif "product" in text_lower and ("catalog" in text_lower or "list" in text_lower):
-        return "product_catalog"
+        return "functional_errors"
     elif "product" in text_lower and ("item" in text_lower or "detail" in text_lower):
-        return "product_items"
+        return "functional_errors"
     elif "roster" in text_lower or "employee" in text_lower:
-        return "roster_management"
+        return "functional_errors"
     elif "time" in text_lower or "clock" in text_lower or "schedule" in text_lower:
-        return "time_based_screens"
+        return "functional_errors"
     elif "phone" in text_lower or "call" in text_lower or "contact" in text_lower:
-        return "phone_call_screens"
+        return "integration_failures"
     elif "app store" in text_lower or "play store" in text_lower:
-        return "app_store_screens"
+        return "compatibility_issues"
     elif "financial" in text_lower or "report" in text_lower or "analytics" in text_lower:
-        return "financial_reports"
+        return "data_integrity_issues"
     elif "weighing" in text_lower or "weight" in text_lower or "scale" in text_lower:
-        return "weighing_system"
+        return "integration_failures"
     elif "tracker" in text_lower or "status" in text_lower:
-        return "tracker_status"
+        return "functional_errors"
     elif "bug" in text_lower or "describe" in text_lower or "issue" in text_lower:
-        return "bug_report_screens"
+        return "unclear_insufficient_info"
     
     # UI/NAVIGATION CATEGORIES
     elif any(nav_word in text_lower for nav_word in ["menu", "navigation", "home", "dashboard"]):
-        return "navigation_screens"
+        return "ui_ux_issues"
     elif any(settings_word in text_lower for settings_word in ["settings", "preferences", "configuration"]):
-        return "settings_screens"
+        return "configuration_settings"
     elif any(search_word in text_lower for search_word in ["search", "filter", "find"]):
-        return "search_screens"
+        return "ui_ux_issues"
     elif any(list_word in text_lower for list_word in ["list", "table", "grid", "view"]):
-        return "list_view_screens"
+        return "ui_ux_issues"
     elif any(form_word in text_lower for form_word in ["form", "input", "field", "enter"]):
-        return "form_input_screens"
+        return "ui_ux_issues"
     
     # If we can't categorize, try to extract meaningful words
     meaningful_words = extract_meaningful_words(normalized_text)
     if meaningful_words:
-        return f"misc_{meaningful_words[:30]}"
+        return "unclear_insufficient_info"
     else:
-        return "unclassified_screens"
+        return "unclear_insufficient_info"
 
 
 def extract_meaningful_words(text: str) -> str:

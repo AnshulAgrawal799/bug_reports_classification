@@ -54,16 +54,7 @@ python scripts/arrange_by_headers.py input_screenshots outputs/ocr_results.csv o
 
 ## Output Structure
 
-The script creates folders based on the header content patterns:
-
-- **welcome_screens** - Screenshots with "welcome" text in headers
-- **add_sale_screens** - Screenshots with "add sale" functionality
-- **rate_card_error_screens** - Screenshots showing "rate card version not found" errors
-- **empty_headers** - Screenshots with empty or minimal header content
-- **transaction_screens** - Screenshots with transaction-related content (PBTNO codes)
-- **inventory_screens** - Screenshots related to inventory management
-- **error_screens** - Screenshots showing various error messages
-- **single_files** - Screenshots that don't have enough similar matches
+The script creates folders based on header content patterns extracted via OCR. These folders are interim groupings to help review visually similar screens. Final bug report categorization in the main pipeline is applied using the problem-focused taxonomy defined in `config/categories.json` via `pipeline/mapping_rules.py`.
 
 ## How It Works
 

@@ -1,0 +1,12 @@
+opencv-python
+pillow
+pytesseract
+rapidfuzz
+transformers
+torch
+scikit-learn
+flask
+pandas
+requests
+joblib
+pytest

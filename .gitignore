@@ -9,13 +9,7 @@ __pycache__/
 *.pywz
 *.pyzw
 
-*.csv
-
-*.json
-*.txt
-*.log
 
 input_screenshots/
 outputs/
 
-bug_reports/

@@ -20,15 +20,19 @@ import argparse
 import json
 import logging
 import hashlib
-import re
 import sys
 import time
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 from urllib.parse import unquote, urlparse
 import requests
 from PIL import Image
 import pytesseract
+
+# New taxonomy mapping rules
+from pipeline.mapping_rules import categorize_record as categorize_with_rules
+from pipeline.mapping_rules import allow_unclear_label
+from pipeline.predictor import load_default_predictor
 
 # Configure logging
 logging.basicConfig(
@@ -62,6 +66,8 @@ class ImageCategorizationPipeline:
             'categorization_successes': 0,
             'fallback_categorizations': 0
         }
+        # Optional model predictor
+        self.predictor = load_default_predictor()
     
     def extract_filename_from_url(self, url: str) -> str:
         """Extract deterministic filename from Firebase Storage URL."""
@@ -159,144 +165,44 @@ class ImageCategorizationPipeline:
             logger.warning(f"OCR failed for {image_path}: {e}")
             return ""
     
-    def categorize_from_ocr_text(self, ocr_text: str) -> Optional[str]:
-        """Categorize image based on OCR text content."""
-        if not ocr_text:
-            return None
-        
-        text_lower = ocr_text.lower()
-        
-        # Login/Authentication screens
-        if any(keyword in text_lower for keyword in [
-            'sign in', 'login', 'password', 'username', 'email', 'authenticate',
-            'forgot password', 'create account', 'register'
-        ]):
-            return "login_screens"
-        
-        # Error screens
-        if any(keyword in text_lower for keyword in [
-            'error', 'exception', 'failed', 'unable to', 'something went wrong',
-            'try again', 'oops', 'not found', '404', '500', 'timeout'
-        ]):
-            return "error_screens"
-        
-        # Navigation/Menu screens
-        if any(keyword in text_lower for keyword in [
-            'menu', 'home', 'dashboard', 'navigation', 'settings', 'profile',
-            'back', 'next', 'continue', 'cancel'
-        ]):
-            return "navigation_screens"
-        
-        # Form screens
-        if any(keyword in text_lower for keyword in [
-            'submit', 'save', 'form', 'field', 'required', 'optional',
-            'select', 'choose', 'enter', 'input'
-        ]):
-            return "form_screens"
-        
-        # Loading screens
-        if any(keyword in text_lower for keyword in [
-            'loading', 'please wait', 'processing', 'buffering'
-        ]):
-            return "loading_screens"
-        
-        # Transaction/Payment screens
-        if any(keyword in text_lower for keyword in [
-            'payment', 'transaction', 'amount', 'balance', 'account',
-            'transfer', 'withdraw', 'deposit', 'pbtno'
-        ]):
-            return "transaction_screens"
-        
-        # Success/Confirmation screens
-        if any(keyword in text_lower for keyword in [
-            'success', 'completed', 'confirmed', 'done', 'thank you',
-            'congratulations'
-        ]):
-            return "success_screens"
-        
-        return None
-    
-    def categorize_from_filename(self, filename: str) -> Optional[str]:
-        """Categorize based on filename patterns."""
-        filename_lower = filename.lower()
-        
-        # Screenshot patterns
-        if 'screenshot' in filename_lower:
-            if 'error' in filename_lower:
-                return "error_screenshots"
-            elif 'login' in filename_lower:
-                return "login_screenshots"
-            elif 'menu' in filename_lower or 'home' in filename_lower:
-                return "navigation_screenshots"
-            else:
-                return "general_screenshots"
-        
-        # File type patterns
-        if filename_lower.endswith(('.jpg', '.jpeg', '.png', '.gif', '.bmp')):
-            return "image_files"
-        elif filename_lower.endswith('.txt'):
-            return "log_files"
-        
-        return None
-    
-    def categorize_from_metadata(self, record: Dict) -> Optional[str]:
-        """Categorize based on record metadata."""
-        comment = record.get('comment', '').lower()
-        
-        if comment:
-            if any(word in comment for word in ['error', 'bug', 'issue', 'problem']):
-                return "reported_issues"
-            elif any(word in comment for word in ['feature', 'request', 'enhancement']):
-                return "feature_requests"
-        
-        # Check user info for test data
-        name = record.get('name', '').lower()
-        email = record.get('email', '').lower()
-        if 'test' in name or 'test' in email:
-            return "test_data"
-        
-        return None
+    # Old, screen-focused categorization removed. We will use mapping_rules.categorize_record
     
     def categorize_record(self, record_id: str, record: Dict) -> str:
-        """Categorize a single record using multiple strategies."""
+        """Categorize a single record using deterministic mapping rules (problem-focused taxonomy)."""
         attachments = record.get('attachments', []) or []
-        
-        if not attachments:
-            return "no_attachments"
-        
-        # Try OCR-based categorization first
+
+        ocr_texts: List[str] = []
+        filenames: List[str] = []
+
         for url in attachments:
             filename = self.extract_filename_from_url(url)
+            filenames.append(filename)
             image_path = self.screenshots_dir / filename
-            
             if image_path.exists():
-                ocr_text = self.perform_ocr(image_path)
-                category = self.categorize_from_ocr_text(ocr_text)
-                if category:
-                    logger.debug(f"OCR categorization for {record_id}: {category}")
-                    self.stats['categorization_successes'] += 1
-                    return category
-        
-        # Try filename-based categorization
-        for url in attachments:
-            filename = self.extract_filename_from_url(url)
-            category = self.categorize_from_filename(filename)
-            if category:
-                logger.debug(f"Filename categorization for {record_id}: {category}")
-                self.stats['categorization_successes'] += 1
-                return category
-        
-        # Try metadata-based categorization
-        category = self.categorize_from_metadata(record)
+                ocr_texts.append(self.perform_ocr(image_path))
+
+        # Optional model prediction
+        model_pred: Optional[str] = None
+        if self.predictor and self.predictor.is_ready():
+            model_pred = self.predictor.predict(
+                record.get('comment', ''), ocr_texts=ocr_texts, filenames=filenames
+            )
+
+        category = categorize_with_rules(record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
         if category:
-            logger.debug(f"Metadata categorization for {record_id}: {category}")
+            logger.debug(f"Categorized {record_id} -> {category}")
             self.stats['categorization_successes'] += 1
             return category
-        
-        # Final fallback
-        logger.debug(f"Fallback categorization for {record_id}: uncategorized")
+
+        # Fallback
+        # As a safety net, only allow 'unclear_insufficient_info' if no usable content exists
+        if allow_unclear_label(record, ocr_texts=ocr_texts, filenames=filenames):
+            logger.debug(f"Fallback categorization for {record_id}: unclear_insufficient_info")
+            self.stats['fallback_categorizations'] += 1
+            return "unclear_insufficient_info"
+        # If usable content exists but no category chosen, prefer model prediction or generic functional_errors
         self.stats['fallback_categorizations'] += 1
-        return "uncategorized"
+        return model_pred or "functional_errors"
     
     def process_record(self, record_id: str, record: Dict) -> Dict:
         """Process a single record: download images and categorize."""
@@ -347,9 +253,24 @@ class ImageCategorizationPipeline:
                     processed_data[record_id] = processed_record
                 except Exception as e:
                     logger.error(f"Error processing record {record_id}: {e}")
-                    # Ensure even failed records get a category
+                    # Ensure even failed records get a category while respecting strict unclear criteria
                     failed_record = record.copy()
-                    failed_record['category'] = "processing_error"
+                    try:
+                        # Reconstruct minimal signals for decision
+                        attachments = record.get('attachments', []) or []
+                        ocr_texts: List[str] = []
+                        filenames: List[str] = []
+                        for url in attachments:
+                            filename = self.extract_filename_from_url(url)
+                            filenames.append(filename)
+                        # No OCR on exception path; rely on filenames and comment
+                        if allow_unclear_label(record, ocr_texts=ocr_texts, filenames=filenames):
+                            failed_record['category'] = "unclear_insufficient_info"
+                        else:
+                            failed_record['category'] = "functional_errors"
+                    except Exception:
+                        # Last-resort fallback
+                        failed_record['category'] = "unclear_insufficient_info"
                     processed_data[record_id] = failed_record
                     self.stats['records_processed'] += 1
             
