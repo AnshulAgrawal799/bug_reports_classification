@@ -637,10 +637,13 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
             reason = 'weak_signal_integration'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
-        # UI/UX weaker hints: loosen to 1 token with guardrails (no conflicting weak auth/conn/integration and no generic functional hits)
+        # UI/UX weaker hints: loosen to 1 token with guardrails
+        # Do NOT trigger on a single generic token like 'screen' or 'page'
         ui_tokens = ["button", "screen", "page", "icon", "font", "text", "label", "alignment", "visible", "display", "scroll", "cut off", "overlap"]
         ui_hits = [tok for tok in ui_tokens if tok in combined]
-        if len(ui_hits) >= 1 and not (has_weak_auth or has_weak_conn or has_weak_integration) and len(generic_hits) == 0:
+        ui_single_generic = (len(ui_hits) == 1 and ui_hits[0] in {"screen", "page"})
+        if (len(ui_hits) >= 2 or (len(ui_hits) == 1 and not ui_single_generic)) \
+            and not (has_weak_auth or has_weak_conn or has_weak_integration) and len(generic_hits) == 0:
             cat = 'ui_ux_issues'
             reason = 'weak_signal_uiux_loose'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
@@ -666,7 +669,9 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
         if filenames:
             fn_join = " \n ".join(_norm(fn) for fn in filenames if fn)
             if fn_join:
-                if any(tok in fn_join for tok in ui_tokens):
+                # Exclude overly generic UI terms in filenames like 'screen'/'screenshot'/'page'
+                ui_tokens_filename = ["button", "icon", "font", "text", "label", "alignment", "visible", "display", "scroll", "cut off", "overlap"]
+                if any(tok in fn_join for tok in ui_tokens_filename):
                     cat = 'ui_ux_issues'
                     reason = 'weak_signal_from_filename_ui'
                     return cat, _compute_confidence(0, _structured_tokens_present(fn_join), strong_rule_applied, False, cat), reason
