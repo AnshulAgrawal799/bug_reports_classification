@@ -30,12 +30,14 @@ Notes:
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple, Set
 import re
 import json
+import unicodedata
 
 # Load canonical categories from config for validation (optional at runtime)
 _CATEGORIES_PATH = Path(__file__).resolve().parents[1] / 'config' / 'categories.json'
+_RULES_PATH = Path(__file__).resolve().parents[1] / 'config' / 'rules.json'
 try:
     with open(_CATEGORIES_PATH, 'r', encoding='utf-8') as f:
         _CANONICAL_CATEGORIES = {item['id'] for item in json.load(f)}
@@ -46,9 +48,47 @@ except Exception:
         'configuration_settings', 'compatibility_issues', 'feature_requests', 'unclear_insufficient_info'
     }
 
+# Load external rules (non-breaking option B)
+try:
+    with open(_RULES_PATH, 'r', encoding='utf-8') as f:
+        _RULES = json.load(f)
+        _PRIORITY_ORDER: List[str] = _RULES.get('priority_order', [])
+        _KEYWORD_MAP: Dict[str, str] = _RULES.get('keyword_map', {})
+        _REGEX_MAP: Dict[str, str] = _RULES.get('regex_map', {})
+        _VALIDATION = _RULES.get('validation', {})
+        _STRUCT_RE = _VALIDATION.get('structured_token_regex', {})
+except Exception:
+    _PRIORITY_ORDER = [
+        'functional_errors', 'data_integrity_issues', 'integration_failures', 'connectivity_problems',
+        'crash_stability', 'performance_issues', 'ui_ux_issues', 'configuration_settings',
+        'authentication_access', 'compatibility_issues', 'feature_requests'
+    ]
+    _KEYWORD_MAP = {}
+    _REGEX_MAP = {}
+    _STRUCT_RE = {
+        'date': r"\b\d{4}[-/]\d{2}[-/]\d{2}\b",
+        'currency': r"(?:₹|\$|€)\s?\d{2,6}",
+        'plain_amount': r"\b\d{2,6}\b",
+        'coins_word': r"\bcoins?\b"
+    }
+
+def _normalize_text(s: str) -> str:
+    """Robust normalization: lowercase, unicode NFKC, strip punctuation, collapse whitespace."""
+    if not s:
+        return ''
+    # Unicode normalize
+    s = unicodedata.normalize('NFKC', s)
+    # Lowercase
+    s = s.lower()
+    # Approximate punctuation removal by removing non-word except currency symbols
+    s = re.sub(r"[^\w\s₹$€]", " ", s)
+    # Collapse whitespace
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
 
 def _norm(s: str) -> str:
-    return (s or '').strip().lower()
+    return _normalize_text(s)
 
 
 def _match_any(text: str, keywords: List[str]) -> bool:
@@ -58,7 +98,101 @@ def _match_any(text: str, keywords: List[str]) -> bool:
 
 def _regex_any(text: str, patterns: List[str]) -> bool:
     t = _norm(text)
-    return any(re.search(p, t) for p in patterns)
+    return any(re.search(p, t, flags=re.IGNORECASE) for p in patterns)
+
+
+def _compile_structured_patterns() -> Dict[str, re.Pattern]:
+    compiled: Dict[str, re.Pattern] = {}
+    for name, pattern in (_STRUCT_RE or {}).items():
+        try:
+            compiled[name] = re.compile(pattern, flags=re.IGNORECASE)
+        except re.error:
+            # Skip invalid regex patterns
+            continue
+    return compiled
+
+
+_STRUCT_PATTERNS = _compile_structured_patterns()
+
+
+def _structured_tokens_present(text: str) -> bool:
+    t = _norm(text)
+    if not t:
+        return False
+    for pat in _STRUCT_PATTERNS.values():
+        if pat.search(t):
+            return True
+    return False
+
+
+def _keyword_matches(text: str) -> Tuple[Set[str], Set[str]]:
+    """Return (matched_keywords, matched_categories) using keyword_map substrings and regex_map patterns."""
+    t = _norm(text)
+    matched_keywords: Set[str] = set()
+    matched_categories: Set[str] = set()
+    if not t:
+        return matched_keywords, matched_categories
+    # Substring keyword_map
+    for kw, cat in (_KEYWORD_MAP or {}).items():
+        k = _norm(kw)
+        if k and k in t:
+            matched_keywords.add(kw)
+            if cat:
+                matched_categories.add(cat)
+    # Regex regex_map
+    for pat, cat in (_REGEX_MAP or {}).items():
+        try:
+            if re.search(pat, t, flags=re.IGNORECASE):
+                matched_keywords.add(f"re:{pat}")
+                if cat:
+                    matched_categories.add(cat)
+        except re.error:
+            continue
+    return matched_keywords, matched_categories
+
+
+def _levenshtein_distance(a: str, b: str) -> int:
+    """Compute Levenshtein distance for small tokens."""
+    if a == b:
+        return 0
+    la, lb = len(a), len(b)
+    if la == 0:
+        return lb
+    if lb == 0:
+        return la
+    dp = list(range(lb + 1))
+    for i in range(1, la + 1):
+        prev = dp[0]
+        dp[0] = i
+        for j in range(1, lb + 1):
+            temp = dp[j]
+            cost = 0 if a[i - 1] == b[j - 1] else 1
+            dp[j] = min(dp[j] + 1, dp[j - 1] + 1, prev + cost)
+            prev = temp
+    return dp[lb]
+
+
+def _fuzzy_contains(text: str, token: str, max_dist: int = 1) -> bool:
+    """Heuristic fuzzy match: check if any word in text is within max_dist of token."""
+    t = _norm(text)
+    if not t:
+        return False
+    words = t.split()
+    tok = _norm(token)
+    if not tok:
+        return False
+    for w in words:
+        if abs(len(w) - len(tok)) <= max_dist and _levenshtein_distance(w, tok) <= max_dist:
+            return True
+    return False
+
+
+def _resolve_by_priority(categories: Set[str]) -> Optional[str]:
+    if not categories:
+        return None
+    # Use configured priority order; otherwise stable sort by name
+    order = {c: i for i, c in enumerate(_PRIORITY_ORDER)} if _PRIORITY_ORDER else {}
+    return sorted(categories, key=lambda c: order.get(c, 10_000))[0]
 
 
 def _has_usable_content(comment: str, ocr_texts: Optional[List[str]], filenames: Optional[List[str]], log_filename: Optional[str] = None) -> bool:
@@ -135,20 +269,68 @@ def allow_unclear_label(record: Dict, ocr_texts: Optional[List[str]] = None, fil
     Return True ONLY if it's acceptable to label as 'unclear_insufficient_info'.
     That is, when there is no usable content to guide categorization.
     """
-    comment = _norm(record.get('comment', ''))
+    comment = _norm(record.get('comment_translated') or record.get('comment', ''))
     # Derive a log filename from record if available
     log_url = _norm((record or {}).get('logFile', ''))
     log_filename: Optional[str] = None
     if log_url:
         # Extract last path segment
         log_filename = log_url.rsplit('/', 1)[-1].split('?', 1)[0]
-    return not _has_usable_content(comment, ocr_texts, filenames, log_filename=log_filename)
+    # First check general usability
+    has_usable = _has_usable_content(comment, ocr_texts, filenames, log_filename=log_filename)
+    if has_usable:
+        return False
+
+    # Also gate on keyword and structured token presence per rules.json
+    combined_texts: List[str] = []
+    if comment:
+        combined_texts.append(comment)
+    for t in (ocr_texts or []):
+        if t:
+            combined_texts.append(_norm(t))
+    combined = " \n ".join(combined_texts)
+
+    kws, cats = _keyword_matches(combined)
+    if kws or cats:
+        return False
+    if _structured_tokens_present(combined):
+        return False
+    return True
 
 
 def categorize_from_comment(comment: str) -> Optional[str]:
     t = _norm(comment)
     if not t:
         return None
+
+    # First-pass regex-based rules for frequent patterns
+    # Data integrity: sales/coins/amount/balance discrepancies
+    if _regex_any(t, [r"\b(sell amount|sell|coins?|amount|balance|incent|incentive)\b", r"\b(amount mismatch|wrong amount|only \d+)\b"]):
+        return 'data_integrity_issues'
+
+    # App not opening and similar
+    if _regex_any(t, [r"\b(app not open|app not opening|can't open( app)?|cannot open( app)?)\b"]):
+        return 'functional_errors'
+
+    # Performance lag/slow
+    if _regex_any(t, [r"\b(lag( issue)?|app lag|slow|sluggish|takes too long)\b"]):
+        return 'performance_issues'
+
+    # Connectivity issues
+    if _regex_any(t, [r"\b(net( ?issue)?|network|no internet|server down|timeout)\b"]):
+        return 'connectivity_problems'
+
+    # Stop notifications request -> treat as feature/config request (user requested feature_requests)
+    if _regex_any(t, [r"\bstop (the )?notification(s)?\b", r"\bdisable notification(s)?\b", r"\bturn off notification(s)?\b"]):
+        return 'feature_requests'
+
+    # Rate card issues
+    if _regex_any(t, [r"\brate ?card( not found| missing)?\b"]):
+        return 'functional_errors'
+
+    # Product quality issues
+    if _regex_any(t, [r"\b(quality|bad quality|quality issue|damaged|damage|spoil(ed)?|waste|dented)\b"]):
+        return 'product_quality_issues'
 
     # Feature requests
     if _match_any(t, ['feature request', 'feature', 'would be great', 'please add', 'enhancement']):
@@ -201,6 +383,20 @@ def categorize_from_ocr(ocr_text: str) -> Optional[str]:
     t = _norm(ocr_text)
     if not t:
         return None
+
+    # Apply first-pass rules here too for OCR text
+    if _regex_any(t, [r"\b(app not open|app not opening|can't open( app)?|cannot open( app)?)\b"]):
+        return 'functional_errors'
+    if _regex_any(t, [r"\b(lag( issue)?|app lag|slow|sluggish|takes too long)\b"]):
+        return 'performance_issues'
+    if _regex_any(t, [r"\b(net( ?issue)?|network|no internet|server down|timeout)\b"]):
+        return 'connectivity_problems'
+    if _regex_any(t, [r"\brate ?card( not found| missing)?\b"]):
+        return 'functional_errors'
+    if _regex_any(t, [r"\b(sell amount|sell|coins?|amount|balance|incent|incentive)\b"]):
+        return 'data_integrity_issues'
+    if _regex_any(t, [r"\b(quality|bad quality|quality issue|damaged|damage|spoil(ed)?|waste|dented)\b"]):
+        return 'product_quality_issues'
 
     # Explicit crash/error indicators
     if _match_any(t, ['error', 'exception', 'fatal', 'stack trace']):
@@ -270,36 +466,70 @@ def post_adjustment(model_pred: Optional[str], signals: Dict[str, bool]) -> Opti
     return pred
 
 
-def categorize_record(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> str:
+def _compute_confidence(matched_keywords: int, structured_present: bool, strong_rule: bool, model_used: bool, final_category: str) -> float:
+    # Base confidence
+    conf = 0.3
+    if strong_rule:
+        conf = 0.7
+    if matched_keywords:
+        conf = max(conf, 0.7 + min(0.2, 0.05 * (matched_keywords - 1)))  # up to 0.9
+    if structured_present and conf < 0.85:
+        conf += 0.05
+    if model_used and conf < 0.7:
+        conf = 0.7
+    # Clamp
+    return float(max(0.0, min(0.99, conf)))
+
+
+def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> Tuple[str, float]:
     """
-    Determine the best category for a record using deterministic heuristics.
+    Determine the best category for a record using deterministic heuristics with rules.json.
     Priority order:
       1) Strong comment-based rules
       2) Strong OCR-based rules
       3) Strong filename-based rules
-      4) Post-adjustment overrides
-      5) Fallback to unclear_insufficient_info
+      4) Config keyword_map with priority tie-breaker
+      5) Post-adjustment overrides
+      6) Best-effort weak signals
+      7) Strict unclear gate
     """
     comment = _norm(record.get('comment', ''))
+    strong_rule_applied = False
 
     # 1) Comment
     c = categorize_from_comment(comment)
     if c:
-        return c
+        strong_rule_applied = True
+        return c, _compute_confidence(0, False, True, False, c)
 
     # 2) OCR
     if ocr_texts:
         for t in ocr_texts:
             cat = categorize_from_ocr(t)
             if cat:
-                return cat
+                strong_rule_applied = True
+                return cat, _compute_confidence(0, False, True, False, cat)
 
     # 3) Filename
     if filenames:
         for fn in filenames:
             cat = categorize_from_filename(fn)
             if cat:
-                return cat
+                strong_rule_applied = True
+                return cat, _compute_confidence(0, False, True, False, cat)
+
+    # 3.5) Keyword mapping from rules.json across combined comment + OCR
+    combined_texts: List[str] = []
+    if comment:
+        combined_texts.append(comment)
+    for t in (ocr_texts or []):
+        if t:
+            combined_texts.append(_norm(t))
+    combined = ' \n '.join(combined_texts)
+    matched_kws, matched_cats = _keyword_matches(combined)
+    if matched_cats:
+        resolved = _resolve_by_priority(matched_cats)
+        return resolved or 'functional_errors', _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, resolved or 'functional_errors')
 
     # 4) Post-adjustment
     signals = {
@@ -309,11 +539,11 @@ def categorize_record(record: Dict, ocr_texts: Optional[List[str]] = None, filen
     }
     adjusted = post_adjustment(model_pred, signals)
     if adjusted:
-        return adjusted
+        return adjusted, _compute_confidence(0, _structured_tokens_present(comment), strong_rule_applied, model_pred is not None, adjusted)
 
     # 4.5) Weak-signal, best-effort mapping before giving up
     # Combine available texts for lightweight heuristics
-    combined_texts: List[str] = []
+    combined_texts = []
     comment = _norm(record.get('comment', ''))
     if comment:
         combined_texts.append(comment)
@@ -330,40 +560,60 @@ def categorize_record(record: Dict, ocr_texts: Optional[List[str]] = None, filen
         currency_present = any(re.search(p, combined) for p in currency_patterns)
         mismatch_words = ["wrong", "mismatch", "not matching", "less", "more", "only", "difference"]
         if (number_present and currency_present) or _match_any(combined, mismatch_words):
-            return 'data_integrity_issues'
+            cat = 'data_integrity_issues'
+            return cat, _compute_confidence(len(matched_kws), True, strong_rule_applied, False, cat)
 
         # Generic error/functionality hints
         generic_error_hints = ["error", "fail", "failed", "not working", "does not work", "unable", "stuck", "cannot", "can't"]
         if _match_any(combined, generic_error_hints):
-            return 'functional_errors'
+            cat = 'functional_errors'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
 
         # Connectivity weaker hints
         weak_connectivity = ["no internet", "network", "server", "timeout", "api"]
         if _match_any(combined, weak_connectivity):
-            return 'connectivity_problems'
+            cat = 'connectivity_problems'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
 
         # Auth weaker hints
         weak_auth = ["otp", "signin", "sign in", "login", "password", "pin"]
         if _match_any(combined, weak_auth):
-            return 'authentication_access'
+            cat = 'authentication_access'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
+
+        # Fuzzy small-token heuristics
+        if _fuzzy_contains(combined, 'coins'):
+            cat = 'data_integrity_issues'
+            return cat, _compute_confidence(len(matched_kws) + 1, True, strong_rule_applied, False, cat)
+        if _fuzzy_contains(combined, 'quality') or _fuzzy_contains(combined, 'damage'):
+            cat = 'product_quality_issues'
+            return cat, _compute_confidence(len(matched_kws) + 1, _structured_tokens_present(combined), strong_rule_applied, False, cat)
 
     # 4.8) If model has a prediction, prefer it over unclear
     if model_pred and model_pred != 'unclear_insufficient_info':
-        return model_pred
+        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred)
 
     # 5) Final decision with strict unclear gate
     if allow_unclear_label(record, ocr_texts=ocr_texts, filenames=filenames):
-        return 'unclear_insufficient_info'
+        return 'unclear_insufficient_info', 0.3
 
     # If we reach here, there is usable content but no strong/weak match.
     # Prefer model prediction if any; otherwise default to a generic, action-oriented class.
     if model_pred:
-        return model_pred
-    return 'functional_errors'
+        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred)
+    cat = 'functional_errors'
+    return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, False, cat)
+
+
+def categorize_record(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> str:
+    """Backward-compatible wrapper returning only category."""
+    cat, _conf = categorize_record_with_meta(record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
+    return cat
 
 
 __all__ = [
     'categorize_record',
+    'categorize_record_with_meta',
     'categorize_from_comment',
     'categorize_from_ocr',
     'categorize_from_filename',

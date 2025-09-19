@@ -31,8 +31,10 @@ import pytesseract
 
 # New taxonomy mapping rules
 from pipeline.mapping_rules import categorize_record as categorize_with_rules
+from pipeline.mapping_rules import categorize_record_with_meta
 from pipeline.mapping_rules import allow_unclear_label
 from pipeline.predictor import load_default_predictor
+from pipeline.translation import detect_and_translate
 
 # Configure logging
 logging.basicConfig(
@@ -168,7 +170,10 @@ class ImageCategorizationPipeline:
     # Old, screen-focused categorization removed. We will use mapping_rules.categorize_record
     
     def categorize_record(self, record_id: str, record: Dict) -> str:
-        """Categorize a single record using deterministic mapping rules (problem-focused taxonomy)."""
+        """Categorize a single record using deterministic mapping rules (problem-focused taxonomy).
+        Note: Deprecated in favor of process_record() path that precomputes OCR and translation.
+        This method is kept for backward compatibility.
+        """
         attachments = record.get('attachments', []) or []
 
         ocr_texts: List[str] = []
@@ -181,14 +186,24 @@ class ImageCategorizationPipeline:
             if image_path.exists():
                 ocr_texts.append(self.perform_ocr(image_path))
 
-        # Optional model prediction
+        # Translation for categorization
+        original_comment = record.get('comment', '') or ''
+        translated_comment, detected_lang = detect_and_translate(original_comment)
+        effective_comment = translated_comment or original_comment
+        temp_record = record.copy()
+        temp_record['comment'] = effective_comment
+
+        # Optional model prediction (prefer translated comment via record)
         model_pred: Optional[str] = None
         if self.predictor and self.predictor.is_ready():
-            model_pred = self.predictor.predict(
-                record.get('comment', ''), ocr_texts=ocr_texts, filenames=filenames
+            record_for_pred = temp_record.copy()
+            if translated_comment:
+                record_for_pred['comment_translated'] = translated_comment
+            model_pred = self.predictor.predict_from_record(
+                record_for_pred, ocr_texts=ocr_texts, filenames=filenames
             )
 
-        category = categorize_with_rules(record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
+        category = categorize_with_rules(temp_record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
         if category:
             logger.debug(f"Categorized {record_id} -> {category}")
             self.stats['categorization_successes'] += 1
@@ -196,7 +211,7 @@ class ImageCategorizationPipeline:
 
         # Fallback
         # As a safety net, only allow 'unclear_insufficient_info' if no usable content exists
-        if allow_unclear_label(record, ocr_texts=ocr_texts, filenames=filenames):
+        if allow_unclear_label(temp_record, ocr_texts=ocr_texts, filenames=filenames):
             logger.debug(f"Fallback categorization for {record_id}: unclear_insufficient_info")
             self.stats['fallback_categorizations'] += 1
             return "unclear_insufficient_info"
@@ -208,18 +223,51 @@ class ImageCategorizationPipeline:
         """Process a single record: download images and categorize."""
         logger.info(f"Processing record: {record_id}")
         
-        # Download images first
+        # Download images first and compute OCR
         attachments = record.get('attachments', []) or []
+        filenames: List[str] = []
+        ocr_texts: List[str] = []
         for url in attachments:
             filename = self.extract_filename_from_url(url)
+            filenames.append(filename)
             self.download_image(url, filename)
-        
-        # Categorize the record
-        category = self.categorize_record(record_id, record)
-        
-        # Update record with category
+            image_path = self.screenshots_dir / filename
+            if image_path.exists():
+                ocr_texts.append(self.perform_ocr(image_path))
+
+        # Language detect and translate comment before categorization
+        original_comment: str = record.get('comment', '') or ''
+        translated_comment, detected_lang = detect_and_translate(original_comment)
+        effective_comment = translated_comment or original_comment
+        temp_record = record.copy()
+        temp_record['comment'] = effective_comment
+
+        # Optional model prediction (prefer translated comment via record)
+        model_pred: Optional[str] = None
+        if self.predictor and self.predictor.is_ready():
+            record_for_pred = temp_record.copy()
+            if translated_comment:
+                record_for_pred['comment_translated'] = translated_comment
+            model_pred = self.predictor.predict_from_record(record_for_pred, ocr_texts=ocr_texts, filenames=filenames)
+
+        # Categorize using mapping rules (with OCR + filenames) and capture confidence
+        category, confidence = categorize_record_with_meta(
+            temp_record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred
+        )
+
+        # Update record with category and enrichments
         updated_record = record.copy()
         updated_record['category'] = category
+        updated_record['label_confidence'] = round(float(confidence), 2)
+        if any(t for t in ocr_texts):
+            # Aggregate extracted text for downstream analysis
+            updated_record['extracted_text'] = "\n\n".join([t for t in ocr_texts if t])
+        else:
+            updated_record['extracted_text'] = ""
+        # Include translation metadata when applicable
+        if detected_lang and detected_lang != 'en' and translated_comment:
+            updated_record['detected_lang'] = detected_lang
+            updated_record['comment_translated'] = translated_comment
         
         self.stats['records_processed'] += 1
         return updated_record

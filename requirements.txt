@@ -10,3 +10,5 @@ pandas
 requests
 joblib
 pytest
+langdetect
+deep-translator

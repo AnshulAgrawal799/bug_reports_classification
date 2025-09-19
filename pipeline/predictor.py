@@ -16,7 +16,7 @@ Training is performed by scripts/train_model.py.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import joblib
 
 DEFAULT_MODELS_DIR = Path('models')
@@ -44,15 +44,42 @@ class BugPredictor:
 
     @staticmethod
     def _make_text(comment: str, ocr_texts: List[str], filenames: List[str]) -> str:
+        """Back-compat text builder using a plain comment string."""
         comment = (comment or '').strip()
         ocr_blob = ' '.join(t for t in (ocr_texts or []) if t)
         fname_blob = ' '.join(f for f in (filenames or []) if f)
         return ' '.join([comment, ocr_blob, fname_blob]).strip()
 
+    @staticmethod
+    def _make_text_from_record(record: Dict[str, Any], ocr_texts: List[str], filenames: List[str]) -> str:
+        """Prefer translated comment when available so the model benefits from translation too."""
+        if not isinstance(record, dict):
+            # Fallback to empty if record schema unexpected
+            rec_comment = ''
+        else:
+            rec_comment = (record.get('comment_translated') or record.get('comment') or '').strip()
+        ocr_blob = ' '.join(t for t in (ocr_texts or []) if t)
+        fname_blob = ' '.join(f for f in (filenames or []) if f)
+        return ' '.join([rec_comment, ocr_blob, fname_blob]).strip()
+
     def predict(self, comment: str, ocr_texts: List[str], filenames: List[str]) -> Optional[str]:
         if not self.is_ready():
             return None
         text = self._make_text(comment, ocr_texts, filenames)
+        if not text:
+            return None
+        X = self.vectorizer.transform([text])
+        try:
+            pred = self.model.predict(X)[0]
+            return str(pred)
+        except Exception:
+            return None
+
+    def predict_from_record(self, record: Dict[str, Any], ocr_texts: List[str], filenames: List[str]) -> Optional[str]:
+        """Predict using a full record, preferring comment_translated when present."""
+        if not self.is_ready():
+            return None
+        text = self._make_text_from_record(record, ocr_texts, filenames)
         if not text:
             return None
         X = self.vectorizer.transform([text])

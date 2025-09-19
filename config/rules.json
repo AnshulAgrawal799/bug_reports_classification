@@ -1,0 +1,137 @@
+{
+  "priority_order": [
+    "functional_errors",
+    "data_integrity_issues",
+    "product_quality_issues",
+    "integration_failures",
+    "connectivity_problems",
+    "crash_stability",
+    "performance_issues",
+    "ui_ux_issues",
+    "configuration_settings",
+    "authentication_access",
+    "compatibility_issues",
+    "feature_requests"
+  ],
+  "validation": {
+    "disallow_unclear_unless": {
+      "no_keywords_match": true,
+      "no_structured_tokens": true,
+      "both_text_and_comment_empty_or_uninformative": true
+    },
+  "regex_map": {
+    "\\bcoins?\\b": "data_integrity_issues",
+    "\\bamount\\b": "data_integrity_issues",
+    "\\bbalance\\b": "data_integrity_issues",
+    "\\bsell( amount)?\\b": "data_integrity_issues",
+    "\\b(rate ?card( not found| missing)?)\\b": "functional_errors",
+    "\\bstop( the)? notification(s)?\\b": "feature_requests",
+    "\\b(quality|qualit[yai]?|quali?ty|qulity|qualiy|bad quality|quality issue|damaged|damage|spoil(ed)?|spoilt|waste|dented)\\b": "product_quality_issues",
+    "(குவாலிட்டி|குவாலிடி|குவாலிட்டி சரியில்லை|காய் குவாலிட்டி|கெட்ட|பாழான|பழுதான|சேதம|கேடு)": "product_quality_issues",
+    "(क्वालिटी|गुणवत्ता|डैमेज|टूटा|खराब|सड़ा|टूटी|डैमेज्ड)": "product_quality_issues",
+    "\\b(quality me problem hai|quality kharab hai|quality sahi nahi)\\b": "product_quality_issues"
+  },
+    "structured_token_regex": {
+      "date": "\\b\\d{4}[-/]\\d{2}[-/]\\d{2}\\b",
+      "currency": "(?:₹|\\$|€)\\s?\\d{2,6}",
+      "plain_amount": "\\b\\d{2,6}\\b",
+      "coins_word": "\\bcoins?\\b"
+    }
+  },
+  "keyword_map": {
+    "rate card not found": "functional_errors",
+    "rate card version not found": "functional_errors",
+    "not working": "functional_errors",
+    "does not work": "functional_errors",
+    "error": "functional_errors",
+    "failed": "functional_errors",
+    "stuck": "functional_errors",
+    "app not opening": "functional_errors",
+
+    "slow": "performance_issues",
+    "lag": "performance_issues",
+    "loading forever": "performance_issues",
+
+    "no internet": "connectivity_problems",
+    "network": "connectivity_problems",
+    "server": "connectivity_problems",
+    "timeout": "connectivity_problems",
+    "api failed": "connectivity_problems",
+    "unable to connect": "connectivity_problems",
+
+    "login": "authentication_access",
+    "sign in": "authentication_access",
+    "signin": "authentication_access",
+    "otp": "authentication_access",
+    "password": "authentication_access",
+    "permission denied": "authentication_access",
+    "access denied": "authentication_access",
+    "session": "authentication_access",
+
+    "wrong total": "data_integrity_issues",
+    "incorrect": "data_integrity_issues",
+    "mismatch": "data_integrity_issues",
+    "duplicate": "data_integrity_issues",
+    "missing data": "data_integrity_issues",
+    "not saved": "data_integrity_issues",
+    "coins": "data_integrity_issues",
+    "amount": "data_integrity_issues",
+    "balance": "data_integrity_issues",
+    "sell amount": "data_integrity_issues",
+    "only": "data_integrity_issues",
+
+    "quality": "product_quality_issues",
+    "bad quality": "product_quality_issues",
+    "quality issue": "product_quality_issues",
+    "damaged": "product_quality_issues",
+    "damage": "product_quality_issues",
+    "spoil": "product_quality_issues",
+    "spoiled": "product_quality_issues",
+    "waste": "product_quality_issues",
+    "dented": "product_quality_issues",
+
+    "crash": "crash_stability",
+    "force close": "crash_stability",
+    "stopped working": "crash_stability",
+    "app closed unexpectedly": "crash_stability",
+
+    "printer": "integration_failures",
+    "bluetooth": "integration_failures",
+    "weighing scale": "integration_failures",
+    "upi": "integration_failures",
+    "payment gateway": "integration_failures",
+    "razorpay": "integration_failures",
+    "google": "integration_failures",
+    "firebase": "integration_failures",
+
+    "settings": "configuration_settings",
+    "configuration": "configuration_settings",
+    "preference": "configuration_settings",
+    "default value wrong": "configuration_settings",
+    "notification": "configuration_settings"
+  },
+  "disambiguation_examples": [
+    {
+      "phrase": "rate card version not found",
+      "choose": [
+        { "if": "error message, flow blocked, or crash", "category": "functional_errors" },
+        { "else_if": "user changed settings or misconfiguration", "category": "configuration_settings" },
+        { "else_if": "mentions network/api/server", "category": "connectivity_problems" }
+      ]
+    },
+    {
+      "phrase": "UPI / payment failed",
+      "choose": [
+        { "if": "mentions gateway, razorpay, printer, bluetooth, google, firebase", "category": "integration_failures" },
+        { "else_if": "explicitly 'no internet' or 'server down/timeout'", "category": "connectivity_problems" }
+      ]
+    },
+    {
+      "phrase": "button not working",
+      "choose": [
+        { "if": "core flow blocked and not just visual", "category": "functional_errors" },
+        { "else_if": "element hidden/overlapping/alignment issue", "category": "ui_ux_issues" }
+      ]
+    }
+  ]
+}

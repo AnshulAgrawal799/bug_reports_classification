@@ -2,61 +2,250 @@
   {
     "id": "functional_errors",
     "name": "Functional Errors",
-    "description": "Core app functionality is broken or not working as expected."
+    "description": "Core app functionality is broken or not working as expected.",
+    "keywords": [
+      "not working",
+      "does not work",
+      "can't",
+      "cannot",
+      "error",
+      "failed",
+      "stuck",
+      "app not opening",
+      "rate card not found"
+    ],
+    "example_phrases": [
+      "app not open",
+      "can't open app",
+      "1st point not working",
+      "rate card not found",
+      "sell bill reset offline",
+      "button does not work",
+      "cannot proceed to next step"
+    ]
   },
   {
     "id": "ui_ux_issues",
     "name": "UI/UX Issues",
-    "description": "Visual or user experience problems that affect usability without fully breaking functionality."
+    "description": "Visual or user experience problems that affect usability without fully breaking functionality.",
+    "keywords": [
+      "alignment",
+      "overlap",
+      "cut off",
+      "hard to read",
+      "too small",
+      "button not visible"
+    ],
+    "example_phrases": [
+      "text overlaps",
+      "screen elements cut off",
+      "font too small"
+    ]
   },
   {
     "id": "performance_issues",
     "name": "Performance Issues",
-    "description": "The app is slow, unresponsive, or consumes excessive resources."
+    "description": "The app is slow, unresponsive, or consumes excessive resources.",
+    "keywords": [
+      "slow",
+      "lag",
+      "lag issue",
+      "app lag",
+      "sluggish",
+      "takes too long",
+      "loading forever"
+    ],
+    "example_phrases": [
+      "app is very slow",
+      "lag issue while billing"
+    ]
   },
   {
     "id": "connectivity_problems",
     "name": "Connectivity Problems",
-    "description": "Issues related to network connectivity, API failures, or data synchronization."
+    "description": "Issues related to network connectivity, API failures, or data synchronization.",
+    "keywords": [
+      "no internet",
+      "network",
+      "net issue",
+      "server",
+      "timeout",
+      "api failed",
+      "unable to connect"
+    ],
+    "example_phrases": [
+      "network error",
+      "no internet connection",
+      "server timeout"
+    ]
   },
   {
     "id": "authentication_access",
     "name": "Authentication & Access",
-    "description": "Problems with login, logout, sessions, permissions, or account access."
+    "description": "Problems with login, logout, sessions, permissions, or account access.",
+    "keywords": [
+      "login",
+      "sign in",
+      "signin",
+      "otp",
+      "password",
+      "permission denied",
+      "access denied",
+      "session"
+    ],
+    "example_phrases": [
+      "otp not received",
+      "login failed"
+    ]
   },
   {
     "id": "data_integrity_issues",
     "name": "Data Integrity Issues",
-    "description": "Data inaccuracies, corruption, duplication, or inconsistency."
+    "description": "Data inaccuracies, corruption, duplication, or inconsistency.",
+    "keywords": [
+      "wrong total",
+      "incorrect",
+      "mismatch",
+      "duplicate",
+      "missing data",
+      "data lost",
+      "not saved",
+      "coins",
+      "amount",
+      "balance",
+      "sell amount",
+      "only"
+    ],
+    "example_phrases": [
+      "today my sell amount is 1750 but app gives only 1150",
+      "coins only 3112 but should be 4556",
+      "balance incorrect"
+    ]
   },
   {
     "id": "crash_stability",
     "name": "Crash & Stability",
-    "description": "App crashes, force closes, or becomes completely unusable."
+    "description": "App crashes, force closes, or becomes completely unusable.",
+    "keywords": [
+      "crash",
+      "force close",
+      "stopped working",
+      "app closed unexpectedly"
+    ],
+    "example_phrases": [
+      "app crashes on start",
+      "force close while billing"
+    ]
   },
   {
     "id": "integration_failures",
     "name": "Integration Failures",
-    "description": "Problems with external services, hardware, or third-party integrations."
+    "description": "Problems with external services, hardware, or third-party integrations.",
+    "keywords": [
+      "printer",
+      "bluetooth",
+      "weighing scale",
+      "upi",
+      "payment gateway",
+      "razorpay",
+      "google",
+      "firebase"
+    ],
+    "example_phrases": [
+      "printer not connecting",
+      "UPI payment failed"
+    ]
   },
   {
     "id": "configuration_settings",
     "name": "Configuration & Settings",
-    "description": "Issues with app settings, preferences, or configuration options."
+    "description": "Issues with app settings, preferences, or configuration options.",
+    "keywords": [
+      "settings",
+      "configuration",
+      "preference",
+      "default value wrong",
+      "notification"
+    ],
+    "example_phrases": [
+      "cannot change settings",
+      "default value wrong",
+      "how to disable notifications"
+    ]
   },
   {
     "id": "compatibility_issues",
     "name": "Compatibility Issues",
-    "description": "Problems specific to devices, OS versions, browsers, or environments."
+    "description": "Problems specific to devices, OS versions, browsers, or environments.",
+    "keywords": [
+      "android",
+      "ios",
+      "tablet",
+      "resolution",
+      "screen size",
+      "only on my phone"
+    ],
+    "example_phrases": [
+      "only on Android 14",
+      "issue on tablet"
+    ]
   },
   {
     "id": "feature_requests",
     "name": "Feature Requests",
-    "description": "User suggestions for new functionality or improvements (not bugs)."
+    "description": "User suggestions for new functionality or improvements (not bugs).",
+    "keywords": [
+      "feature request",
+      "please add",
+      "would be great",
+      "enhancement",
+      "stop notification",
+      "disable notification",
+      "turn off notification"
+    ],
+    "example_phrases": [
+      "please add earnings summary",
+      "stop the notification"
+    ]
+  },
+  {
+    "id": "product_quality_issues",
+    "name": "Product Quality Issues",
+    "description": "Reports about quality of delivered products: bad/spoiled/damaged items, dented packaging, poor quality produce, etc.",
+    "keywords": [
+      "quality",
+      "quality issue",
+      "bad quality",
+      "damaged",
+      "damage",
+      "spoil",
+      "spoiled",
+      "waste",
+      "dented"
+    ],
+    "example_phrases": [
+      "quality is not right",
+      "too worst quality",
+      "all vegetables waste quality",
+      "package dented and items damaged",
+      "காய் குவாலிட்டி சரியில்லை",
+      "quality me problem hai",
+      "damaged item received"
+    ]
   },
   {
     "id": "unclear_insufficient_info",
     "name": "Unclear/Insufficient Info",
-    "description": "Reports lacking enough detail to categorize or understand the issue."
+    "description": "Reports lacking enough detail to categorize or understand the issue.",
+    "keywords": [
+      "unclear",
+      "insufficient info"
+    ],
+    "example_phrases": [
+      "ok",
+      "na",
+      "hmm"
+    ],
+    "notes": "This label should be rare. Use only when there is truly no usable content in comment, OCR, or filenames."
   }
 ]

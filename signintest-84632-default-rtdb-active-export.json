@@ -3,7 +3,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000055321.jpg?alt=media&token=9311a3b5-046b-4019-8695-b0c2b1eebd88"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 12:18:54.946506",
     "email": "",
@@ -17,7 +17,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250819-154440.jpg?alt=media&token=934dbdd2-bf6c-4dc1-a115-f69c585164dd",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000278347.jpg?alt=media&token=2392d60d-ce27-4e73-a6ef-dbfeba8343a1"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 15:50:20.874411",
     "email": "",
@@ -30,7 +30,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250819_172348.jpg?alt=media&token=c772908b-e5bd-4983-9816-bc76306c7ca5"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 17:24:15.472177",
     "email": "",
@@ -43,7 +43,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-17-36-48-77_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=976dbf59-16d3-43b1-9c1f-55c3e91acc7a"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-19 17:37:07.643934",
     "email": "",
@@ -56,7 +56,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-17-45-12-708_com.wheelocity.wow_customer_pos.jpg?alt=media&token=61c0980b-7b5f-4e14-823d-8d0b80d59830"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 17:45:41.376451",
     "email": "",
@@ -69,7 +69,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250819_181556.jpg?alt=media&token=9712762f-4503-4b4a-a366-f4ca1acdd663"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 18:20:22.356644",
     "email": "",
@@ -82,7 +82,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-21-06-19-454_com.wheelocity.wow_customer_pos.jpg?alt=media&token=4056a34f-3868-407a-a994-990c66cdd89d"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 21:06:48.043415",
     "email": "",
@@ -95,7 +95,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250819_210718_WoW.jpg?alt=media&token=9f4b22d0-00dc-440b-8e4a-b9614a2eacfd"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-19 21:07:52.095166",
     "email": "",
@@ -108,7 +108,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-21-13-09-129_com.wheelocity.wow_customer_pos.jpg?alt=media&token=7b4f75bc-12cd-44b1-84db-293ac5af8b72"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "today my sell amount is 1750 but this app give only 1150 so my sell amount is 1750 .\nAnd coins I am collet 4556 coins today but this app give 3112 only so give my coins 4556 and sell amount 1750 , pls",
     "createdAt": "2025-08-19 21:19:19.379669",
     "email": "",
@@ -121,7 +121,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-21-32-08-21_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=4c78f078-b335-4700-a83c-4afd80da714e"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-19 21:32:41.353064",
     "email": "",
@@ -134,7 +134,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-19-22-47-23-988_com.wheelocity.wow_customer_pos.jpg?alt=media&token=3b7180c5-a1d5-4250-800a-72a2cf5aa2bb"
     ],
-    "category": "general_screenshots",
+    "category": "feature_requests",
     "comment": "please add my all earnings,\nplease add amount of earnings. ",
     "createdAt": "2025-08-19 22:49:37.343551",
     "email": "",
@@ -147,7 +147,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-03-55-29-652_com.wheelocity.wow_customer_pos.jpg?alt=media&token=e72e3084-5b48-4714-9705-dcaeffc7e4ea"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 03:55:52.755067",
     "email": "",
@@ -160,7 +160,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-04-15-32-289_com.wheelocity.wow_customer_pos.jpg?alt=media&token=93b3299f-206e-49ec-bd01-af638e55e6a9"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 04:16:05.287788",
     "email": "",
@@ -173,7 +173,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_045312_WoW.jpg?alt=media&token=3c0b2539-e66d-44b4-a826-1f981c308aef"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 04:53:38.475651",
     "email": "",
@@ -186,7 +186,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_045338_WoW.jpg?alt=media&token=fb37bf9a-cfa6-4777-810b-d159639b427b"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 04:53:59.667213",
     "email": "",
@@ -199,7 +199,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-045343.png?alt=media&token=9d310be8-3fc9-45b6-924f-d375c9aae28c"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-20 04:54:08.417435",
     "email": "",
@@ -212,7 +212,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-045958.jpg?alt=media&token=01884151-2a10-444a-b2d9-a15b92524a42"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "damage ",
     "createdAt": "2025-08-20 05:00:37.366988",
     "email": "",
@@ -225,7 +225,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_051508.jpg?alt=media&token=8eb2383f-9406-4850-a3f9-ef206077ee69"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 05:15:24.577439",
     "email": "",
@@ -238,7 +238,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-052118.jpg?alt=media&token=0ad43dac-ed16-4497-af42-bc8468d14c89"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 05:21:43.819811",
     "email": "",
@@ -251,7 +251,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0820_053554.jpg?alt=media&token=c1f08562-902a-4e5b-aeeb-16fd9f864dc2"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 05:36:14.837048",
     "email": "",
@@ -265,7 +265,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-05-40-29-12_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=10f5e3d2-faf2-4c5a-9b20-4511c27627db",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1001950931.jpg?alt=media&token=303692df-03bd-456a-a117-a985582978d0"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "எல்லாமே ரேட் அதிகமா இருக்கு கஸ்டமர் கேக்கும்போது எங்களால பதில் பேச முடியல கடைகள்ள விக்கிற ரேட்டோட உங்க கிட்ட ரேட் அதிகமா இருக்கு அப்படின்னு சொல்றாங்க நாங்க என்ன பண்றது சொல்லுங்க ",
     "createdAt": "2025-08-20 05:44:49.911005",
     "email": "",
@@ -278,7 +278,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0820_055856.jpg?alt=media&token=53b48cab-68f7-4083-b003-4d98c1361794"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 05:59:15.764737",
     "email": "",
@@ -291,7 +291,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-06-02-00-68_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=0e7e1eca-c6c8-4b3d-8abf-590cfd6dd497"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 06:02:42.169706",
     "email": "",
@@ -301,7 +301,7 @@
     "userId": "9493"
   },
   "-OY3vV8Q0QWGqxJqWwH6": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-20 06:13:15.707324",
     "email": "",
@@ -315,7 +315,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-06-15-23-18_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=b4dfb277-88a7-4169-acf2-8b25492b65c9",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000003884.jpg?alt=media&token=14a070f2-bcb3-4013-b797-7ba855163007"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "காய் குவாலிட்டி சரியில்லை",
     "createdAt": "2025-08-20 06:16:22.483450",
     "email": "",
@@ -328,7 +328,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_063502.jpg?alt=media&token=8aede461-75ea-4e13-8320-dd84c3ca6a2a"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 06:35:47.293318",
     "email": "",
@@ -341,7 +341,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_063907.jpg?alt=media&token=e5a20af7-55af-44ef-be6e-943c026ea357"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-20 06:39:29.790632",
     "email": "",
@@ -354,7 +354,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-06-41-44-660_com.wheelocity.wow_customer_pos-edit.jpg?alt=media&token=e0d1674c-ed3d-42c4-a8fb-ee606875cad5"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 06:42:09.705482",
     "email": "",
@@ -367,7 +367,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_065417.jpg?alt=media&token=7d45bfd8-b6a4-44cc-a0b0-046e79ec33fe"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 06:55:05.087022",
     "email": "",
@@ -377,7 +377,7 @@
     "userId": "1713"
   },
   "-OY456U2R0t5Ds_n5lWC": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-20 06:59:40.668461",
     "email": "",
@@ -390,7 +390,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_074257.jpg?alt=media&token=27f188ac-b54f-45b3-b66f-170946ad4f58"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "ha",
     "createdAt": "2025-08-20 07:45:50.891107",
     "email": "",
@@ -403,7 +403,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_075754_Truecaller.jpg?alt=media&token=bd966de2-fc04-4095-9b3c-df13a3163b11"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 07:58:15.404406",
     "email": "",
@@ -416,7 +416,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_083013.jpg?alt=media&token=683b14e7-23c0-4be9-8cc6-9e4625196fdd"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 08:30:34.171900",
     "email": "",
@@ -429,7 +429,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-095412.jpg?alt=media&token=e99aa898-30a9-44a9-909d-a1a1c386419b"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-20 09:54:32.444723",
     "email": "",
@@ -442,7 +442,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_100127.jpg?alt=media&token=49d5192f-fd44-4e4e-8c8c-953893392092"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "ok",
     "createdAt": "2025-08-20 10:01:55.669028",
     "email": "",
@@ -455,7 +455,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-102337.png?alt=media&token=952948b0-fab8-4998-b824-167b584a5df2"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 10:24:04.887101",
     "email": "",
@@ -469,7 +469,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820_163254_WoW.jpg?alt=media&token=9b2d09e6-0526-4177-86d5-a35801ece874",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000129667.jpg?alt=media&token=f76c6648-9495-4b94-9c8d-932561d9997b"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 16:34:16.919404",
     "email": "",
@@ -482,7 +482,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-183849.jpg?alt=media&token=e3170b05-ae4d-4481-9d84-70aca304aa93"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 18:39:06.825591",
     "email": "",
@@ -495,7 +495,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-191657.jpg?alt=media&token=0220041a-ccf6-47bf-b45c-99b44fb29cd3"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-20 19:18:08.146030",
     "email": "",
@@ -508,7 +508,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-20-19-20-50-59_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=1d984fd2-b35e-47ec-a70a-2ca9f5a6db08"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "1st point not ",
     "createdAt": "2025-08-20 19:21:24.313423",
     "email": "",
@@ -521,7 +521,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250820-213310.jpg?alt=media&token=d7e25c94-fa1e-42d5-8577-9ea71299fa6d"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-20 21:33:31.068056",
     "email": "",
@@ -534,7 +534,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-05-06-16-24.jpg?alt=media&token=145ed6e4-3a31-4ba3-a5e4-31927692d6d0"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 05:07:22.669128",
     "email": "",
@@ -547,7 +547,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-05-41-10-742_com.wheelocity.wow_customer_pos.jpg?alt=media&token=3d7dc9a1-0f91-48cd-b399-6fcfb3d637a6"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 05:41:30.426721",
     "email": "",
@@ -560,7 +560,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-05-42-51-93_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=82c992ec-9378-478d-840a-cb9f3fa9dbaf"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-21 05:44:10.327427",
     "email": "",
@@ -573,7 +573,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-054448.jpg?alt=media&token=660c9da2-8244-4d6e-b5fd-b4dbd9812890"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-21 05:45:07.572093",
     "email": "",
@@ -586,7 +586,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_055124.jpg?alt=media&token=40a3b421-c9a0-4dd3-b43c-7ec171887d18"
     ],
-    "category": "general_screenshots",
+    "category": "integration_failures",
     "comment": "not show than price value ",
     "createdAt": "2025-08-21 05:52:04.116167",
     "email": "",
@@ -599,7 +599,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-055558.WoW.png?alt=media&token=d8211764-93c2-461e-9d75-17f865c2b7d9"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "sell bil resrt offline ",
     "createdAt": "2025-08-21 05:56:41.893129",
     "email": "",
@@ -612,7 +612,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-055620.WoW.png?alt=media&token=d1c9b02d-04b4-47f1-8744-ac7425ba9fef"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 05:56:48.597632",
     "email": "",
@@ -622,7 +622,7 @@
     "userId": "7652"
   },
   "-OY91uULcEVGj-NuV_zE": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:04:14.691027",
     "email": "",
@@ -635,7 +635,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-060343_WoW.jpg?alt=media&token=4a052bcf-8909-4fbe-8678-70c558ab3a5a"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:04:14.383317",
     "email": "",
@@ -648,7 +648,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-03-44-289_com.wheelocity.wow_customer_pos.jpg?alt=media&token=5b81f273-513a-44b5-96b2-d05f425bf4d7"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "sale amount invincible ",
     "createdAt": "2025-08-21 06:04:27.143041",
     "email": "",
@@ -662,7 +662,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-04-35-007_com.wheelocity.wow_customer_pos.jpg?alt=media&token=0ec1e927-5283-4f55-bd57-0f572eb522e4",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1001408813.jpg?alt=media&token=45580c23-4138-4257-9267-46f121910abf"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "app not opening ",
     "createdAt": "2025-08-21 06:05:06.117437",
     "email": "",
@@ -676,7 +676,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-03-48-07_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=2fc320cf-f3a1-41fa-afe6-3b2e52809fda",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000247701.jpg?alt=media&token=5cfa0481-6be8-4d28-84cd-2294c76d517b"
     ],
-    "category": "transaction_screens",
+    "category": "functional_errors",
     "comment": "app not working ",
     "createdAt": "2025-08-21 06:05:14.819219",
     "email": "",
@@ -690,7 +690,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-06-15-485_com.wheelocity.wow_customer_pos.jpg?alt=media&token=31da8a32-1d03-4074-90b8-88ccf19bacd9",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_34369.jpg?alt=media&token=945d142f-d0e0-4064-a515-516bbdff40df"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:06:40.976424",
     "email": "",
@@ -704,7 +704,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-06-50-82_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=52d8078e-30a3-48ed-8867-aa9152ec1186",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000416660.jpg?alt=media&token=97831dca-e67b-4a47-a2a0-7cc8f0bbffe5"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "why this problem showing my app",
     "createdAt": "2025-08-21 06:07:42.655423",
     "email": "",
@@ -717,7 +717,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-07-17-93_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=15d7c298-b7ce-4682-be05-b0469cde82f2"
     ],
-    "category": "success_screens",
+    "category": "integration_failures",
     "comment": "hi",
     "createdAt": "2025-08-21 06:08:01.314462",
     "email": "",
@@ -731,7 +731,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-07-46-72_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=b27633f6-6b6f-4c75-ba3d-4df562fb4b57",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000096416.jpg?alt=media&token=723dc1b3-32dc-48e0-b037-c03a84425a6c"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:08:32.236354",
     "email": "",
@@ -744,7 +744,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000004843.jpg?alt=media&token=c07449fb-852f-4888-9b9b-88d25ebd90b6"
     ],
-    "category": "image_files",
+    "category": "functional_errors",
     "comment": "can't open app",
     "createdAt": "2025-08-21 06:09:27.004800",
     "email": "",
@@ -759,7 +759,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000035314.jpg?alt=media&token=c2a3c01f-6959-4ffd-8fa8-526b894df994",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000035314.jpg?alt=media&token=719d3e45-40cc-4577-ba51-922654206156"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "how to sale some issue ",
     "createdAt": "2025-08-21 06:10:13.584961",
     "email": "",
@@ -773,7 +773,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-09-41-34_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=96dddd45-0f65-4b9d-bf73-73bed0a9043d",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000124210.jpg?alt=media&token=996cd5aa-8178-4cae-9999-214e33418743"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:10:09.839986",
     "email": "",
@@ -786,7 +786,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-09-53-44_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=8bfa88d2-2a11-4f45-9cae-2e2e90946822"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "sale option not open",
     "createdAt": "2025-08-21 06:10:39.419399",
     "email": "",
@@ -799,7 +799,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-10-32-176_com.wheelocity.wow_customer_pos.jpg?alt=media&token=177d3a63-673a-40e3-83ec-5d52bf701825"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:10:46.177173",
     "email": "",
@@ -812,7 +812,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000021848.png?alt=media&token=340bea7f-0211-42d3-8132-fcca5a20b399"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "sales automatic our",
     "createdAt": "2025-08-21 06:11:24.876556",
     "email": "",
@@ -826,7 +826,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-11-04-296_com.wheelocity.wow_customer_pos.jpg?alt=media&token=8b95b1f4-3a6a-4e37-a0b1-af89891271cb",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000187540.jpg?alt=media&token=5e5afd6e-5c04-4892-9d66-b1e2c7d6fa11"
     ],
-    "category": "general_screenshots",
+    "category": "functional_errors",
     "comment": "App does not work properly",
     "createdAt": "2025-08-21 06:11:44.058975",
     "email": "",
@@ -839,7 +839,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_061351.jpg?alt=media&token=f8fbad9d-6da3-43b8-a6d4-7445dc99ec19"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:14:19.380804",
     "email": "",
@@ -852,7 +852,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-061530.jpg?alt=media&token=63110d57-df28-43a9-82c7-e6b80974f954"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:16:00.269746",
     "email": "",
@@ -866,7 +866,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_061609.jpg?alt=media&token=b7e02c54-13f8-4bb8-b7a6-259a68eb5ad7",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000133887.jpg?alt=media&token=1ee4588b-8ff5-41f1-99a6-541ed5360691"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:16:44.020682",
     "email": "",
@@ -880,7 +880,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-16-34-74_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=5151a2ba-7b40-49a2-9373-8f5e3479e864",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000003817.jpg?alt=media&token=949632e2-4a7b-4133-9d15-d5e1f4251889"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "app.work agala.bill submit agala sir",
     "createdAt": "2025-08-21 06:18:05.413053",
     "email": "",
@@ -893,7 +893,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821-061817.jpg?alt=media&token=a1f541bb-d973-40b4-bcfa-8d9219d62162"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-21 06:18:34.752804",
     "email": "",
@@ -906,7 +906,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-18-32-45_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=93e9a31d-66e0-4409-b5e0-3ffe797ce614"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:18:56.519742",
     "email": "",
@@ -920,7 +920,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-18-50-553_com.wheelocity.wow_customer_pos.jpg?alt=media&token=8ca3b796-bd17-492b-b2b1-4ac907645df7",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1001408837.jpg?alt=media&token=6ac053ec-7d60-47f3-a268-2b0ae7bf4543"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "not working ",
     "createdAt": "2025-08-21 06:19:20.372740",
     "email": "",
@@ -933,7 +933,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-21-23-60_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=5d062d30-0354-4e79-b10c-ff1408421ba7"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "rate ",
     "createdAt": "2025-08-21 06:21:52.527967",
     "email": "",
@@ -946,7 +946,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-23-31-26_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=5fa05a9c-396b-4433-b58d-7c9293ea5118"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:23:57.069859",
     "email": "",
@@ -959,7 +959,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-23-45-518_com.wheelocity.wow_customer_pos.jpg?alt=media&token=262a4ee0-8a13-4493-a63c-34e0fdea8462"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "sales not pushing",
     "createdAt": "2025-08-21 06:24:27.504077",
     "email": "",
@@ -972,7 +972,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_062501.jpg?alt=media&token=73d94934-59ed-47a1-89a0-c81d887e6c3a"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-21 06:25:39.324734",
     "email": "",
@@ -985,7 +985,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_062702_WoW.jpg?alt=media&token=c5affdda-6364-4142-92e4-8a0aa0e88ffd"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:27:31.247062",
     "email": "",
@@ -998,7 +998,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-27-52-27_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=d980ff8a-1035-4960-8a21-a009035743c3"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 06:28:27.691379",
     "email": "",
@@ -1011,7 +1011,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-28-21-07_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=0d0c5b67-0555-4a2b-9ad7-38e77b0b48db"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:28:49.804976",
     "email": "",
@@ -1025,7 +1025,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_063201.jpg?alt=media&token=f7aba8f5-9c32-4e04-81ac-c8e6d1a8d249",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000058866.jpg?alt=media&token=32f68125-b471-4f63-85ce-be9ebb860369"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:33:15.233984",
     "email": "",
@@ -1038,7 +1038,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000274108.jpg?alt=media&token=13c95a81-5eaf-4537-8183-c1690c6b6ba4"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-21 06:38:45.476327",
     "email": "",
@@ -1051,7 +1051,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_064018_WoW.jpg?alt=media&token=6cd94864-cdc4-444a-bdf4-5f3209a4a954"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-21 06:40:43.456301",
     "email": "",
@@ -1064,7 +1064,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250821_070209.jpg?alt=media&token=cd1fa05f-06d8-4149-8c98-78d272cc6e77"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 07:02:34.940191",
     "email": "",
@@ -1077,7 +1077,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-07-35-54-516_com.wheelocity.wow_customer_pos.jpg?alt=media&token=737ea260-3d6b-4b69-9a8e-fcc63af9828a"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 07:36:30.308971",
     "email": "",
@@ -1091,7 +1091,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-06-18-08-90.jpg?alt=media&token=e3353bd3-a86f-4c49-bb97-c2972396432c",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_IMG-20250821-WA0066.jpg?alt=media&token=48eb8ea0-afb6-4917-b48a-cf3004ba24aa"
     ],
-    "category": "general_screenshots",
+    "category": "authentication_access",
     "comment": "all vegetable damege ",
     "createdAt": "2025-08-21 07:59:33.838103",
     "email": "",
@@ -1104,7 +1104,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000023366.jpg?alt=media&token=e7c3abcc-1473-47cf-82f1-c4636a741edf"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 10:10:22.325417",
     "email": "",
@@ -1117,7 +1117,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-16-14-27-90_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=6cedb746-99f1-406b-b9b9-f887adde72ff"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "app issue ",
     "createdAt": "2025-08-21 16:14:55.543340",
     "email": "",
@@ -1130,7 +1130,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-16-35-10-36_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=eb2724ac-dace-45df-b737-42c023657e53"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 16:35:48.542069",
     "email": "",
@@ -1143,7 +1143,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-20-58-54-465_com.wheelocity.wow_customer_pos.jpg?alt=media&token=d6da516e-3cff-4b9d-a050-ba4a6ab4dbc8"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-21 20:59:45.930028",
     "email": "",
@@ -1157,7 +1157,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-21-21-47-55-85_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=24d3017d-d506-4a7f-9e2f-e0f3fb597ef7",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000032707.jpg?alt=media&token=4c85148c-b096-4909-8ce2-4e2b4b262a55"
     ],
-    "category": "transaction_screens",
+    "category": "functional_errors",
     "comment": "my earnings tab not working ",
     "createdAt": "2025-08-21 21:51:20.698916",
     "email": "",
@@ -1170,7 +1170,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822-044708.jpg?alt=media&token=b88e32d7-a1b1-4edd-8e6f-8ccfd1901af7"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 04:47:27.381309",
     "email": "",
@@ -1183,7 +1183,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-05-08-51-18.jpg?alt=media&token=50b24a53-497a-411f-a1ba-5a0be54f7766"
     ],
-    "category": "form_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-22 05:09:16.161940",
     "email": "",
@@ -1197,7 +1197,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822_051732.jpg?alt=media&token=edc011c6-52f9-49ff-87ab-aece6d2da264",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000138337.jpg?alt=media&token=4ec8db5f-cfe6-4a01-b785-f924c15fe595"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 05:20:01.949279",
     "email": "",
@@ -1210,7 +1210,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822_053129.jpg?alt=media&token=4e964f8b-2ac2-4e1c-81c7-140d82a7d714"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 05:31:46.438077",
     "email": "",
@@ -1223,7 +1223,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-05-39-26-619_com.wheelocity.wow_customer_pos.jpg?alt=media&token=b64a7372-f99c-448c-b912-7f16c3e1b511"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "morning double slot please check the issue and incentive pending ",
     "createdAt": "2025-08-22 05:40:31.621189",
     "email": "",
@@ -1236,7 +1236,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-06-48-59-33_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=34403ef9-bf25-4775-94dd-ac6de85e6964"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-22 06:49:31.574554",
     "email": "",
@@ -1249,7 +1249,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822_074014.jpg?alt=media&token=8daf6d27-99b8-4e78-973a-ba191f905643"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 07:41:15.350556",
     "email": "",
@@ -1262,7 +1262,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822_080327.jpg?alt=media&token=40ef4286-9af2-440d-b3fc-3322164d5967"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "wow All veges hight prices please price change 🙏🙏🙏🙏",
     "createdAt": "2025-08-22 08:04:25.298305",
     "email": "",
@@ -1275,7 +1275,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-08-04-56-04_54063fc6848ac98a54ce5f2a63661433.jpg?alt=media&token=43f01d51-240a-494d-bbb4-1ca3d7a8796e"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 08:07:56.006165",
     "email": "",
@@ -1288,7 +1288,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0822_081018.jpg?alt=media&token=15e42c07-ea1b-444b-9472-e32e2ee9db20"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "most of the FMCG wastage 🤧",
     "createdAt": "2025-08-22 08:12:39.891735",
     "email": "",
@@ -1301,7 +1301,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-08-45-02-015_com.wheelocity.wow_customer_pos.jpg?alt=media&token=84b19a57-2b98-4d0c-bec7-7dcecebc3400"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "I am sell 5557 coin ,\nbut amount in incest is low my incest amount 550 but this show only 500.so please my incest amount. please",
     "createdAt": "2025-08-22 08:48:12.629446",
     "email": "",
@@ -1315,7 +1315,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-08-51-10-46_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=262ebd7b-4b9b-4050-b51c-b7137a6b3f8a",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000358629.jpg?alt=media&token=d61df909-5247-4d76-acef-ece317cda43f"
     ],
-    "category": "navigation_screens",
+    "category": "functional_errors",
     "comment": "stock clossing problem ",
     "createdAt": "2025-08-22 08:52:41.769538",
     "email": "",
@@ -1328,7 +1328,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-10-14-30-91_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=97a64902-d82e-4b66-9a81-eb8f37606f19"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 10:14:51.285374",
     "email": "",
@@ -1341,7 +1341,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822_153907_WoW.jpg?alt=media&token=23902875-510c-40ff-81cf-6f4285b63500"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 15:39:35.643714",
     "email": "",
@@ -1354,7 +1354,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-20-38-51-35_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=a150b85f-488f-4226-af73-6eb1c8a9b25c"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "1",
     "createdAt": "2025-08-22 20:39:18.446692",
     "email": "",
@@ -1367,7 +1367,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-22-20-47-14-05.jpg?alt=media&token=2b7ed1eb-dfad-47b1-ac1a-9ee90ddaf897"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 20:47:46.541873",
     "email": "",
@@ -1380,7 +1380,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250822-210123.jpg?alt=media&token=da7d1ed9-6f89-4c67-b0e6-400bb27ca275"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-22 21:01:46.151550",
     "email": "",
@@ -1393,7 +1393,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0823_045609.jpg?alt=media&token=5fc37a1e-7df0-43de-82ee-15cfbfc4a3db"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 04:56:34.700715",
     "email": "",
@@ -1406,7 +1406,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-05-21-32-723_com.wheelocity.wow_customer_pos.jpg?alt=media&token=69218159-6793-4732-bf4b-0a1779246721"
     ],
-    "category": "transaction_screens",
+    "category": "performance_issues",
     "comment": "app lag issu",
     "createdAt": "2025-08-23 05:22:17.802880",
     "email": "",
@@ -1419,7 +1419,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-05-40-11-86_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=36c8333d-5852-4e38-ad58-bf2e9c174f8b"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 05:40:34.726612",
     "email": "",
@@ -1432,7 +1432,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-06-31-34-17.jpg?alt=media&token=e194b7ae-7cb8-431b-a6f3-6c9e6ad5d0a7"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 06:31:52.643849",
     "email": "",
@@ -1445,7 +1445,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-06-34-04-07_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=7207897c-7099-48ae-b807-fc6d173bd530"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "a",
     "createdAt": "2025-08-23 06:34:20.999725",
     "email": "",
@@ -1458,7 +1458,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-06-34-38-643_com.miui.calculator.jpg?alt=media&token=37e95717-6e2b-475d-bf30-b3d61d56c863"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 06:35:08.924751",
     "email": "",
@@ -1471,7 +1471,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000091129.jpg?alt=media&token=32443ac6-6a5e-4165-8c43-a128ede5bc49"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "arakira praishe 13 ",
     "createdAt": "2025-08-23 06:40:05.832124",
     "email": "",
@@ -1485,7 +1485,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_064049.jpg?alt=media&token=1e28e0ad-8afd-4c2b-8df6-88ad46206b6c",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000206994.jpg?alt=media&token=6ec7d078-543a-46bb-9807-4ca9ac2ec96b"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 06:41:27.115617",
     "email": "",
@@ -1498,7 +1498,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_064204.jpg?alt=media&token=b8550bab-325b-4dab-a170-e75c0773b513"
     ],
-    "category": "general_screenshots",
+    "category": "integration_failures",
     "comment": "Bluetooth device not connected ",
     "createdAt": "2025-08-23 06:42:36.985128",
     "email": "",
@@ -1511,7 +1511,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-07-58-34-275_com.wheelocity.wow_customer_pos.jpg?alt=media&token=6e083056-f670-4775-a39f-4caae6ca7454"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-23 07:59:18.696651",
     "email": "",
@@ -1524,7 +1524,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-08-58-25-705_com.wheelocity.wow_customer_pos.jpg?alt=media&token=4dabc99a-7ee9-41ed-8264-9421392a42ea"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-23 08:59:46.457445",
     "email": "",
@@ -1537,7 +1537,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_19066.jpg?alt=media&token=ddb9970f-e1f2-4802-a542-57320f309a5f"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 10:12:08.741222",
     "email": "",
@@ -1550,7 +1550,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-10-19-13-68_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=fe9d04d5-5f08-4439-b97a-5089200f66c3"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 10:19:36.021029",
     "email": "",
@@ -1563,7 +1563,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_141244.jpg?alt=media&token=dc8be017-b62a-4ea3-86fe-1d5c964428c7"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 14:13:12.789397",
     "email": "",
@@ -1576,7 +1576,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-16-16-39-46_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=232a02b5-ca5c-4f96-a4e1-c8791cb4aff3"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 16:17:13.393774",
     "email": "",
@@ -1589,7 +1589,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-16-17-22-79_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=a6ffb881-cb46-4a46-aca1-4b0aaeb7fcf9"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 16:17:49.363516",
     "email": "",
@@ -1602,7 +1602,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_161831.jpg?alt=media&token=aa25018b-ef7a-4788-8068-63b06c864ed6"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "today 23/08/2025 data not fou",
     "createdAt": "2025-08-23 16:20:02.796434",
     "email": "",
@@ -1615,7 +1615,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_163935.jpg?alt=media&token=51d35464-e753-4cbd-a7e3-fc216ebf382c"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "error ",
     "createdAt": "2025-08-23 16:40:23.072777",
     "email": "",
@@ -1628,7 +1628,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250823_171716.jpg?alt=media&token=f11d2705-6215-4d03-815c-e488cae00f98"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "Baghdad ",
     "createdAt": "2025-08-23 17:18:30.805732",
     "email": "",
@@ -1641,7 +1641,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-23-20-50-07-626_com.wheelocity.wow_customer_pos.jpg?alt=media&token=f739f398-816c-402f-bc25-fb2bb4423199"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-23 20:51:10.627069",
     "email": "",
@@ -1654,7 +1654,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-04-27-39-08.jpg?alt=media&token=3e74e677-33c2-4ee2-9738-d92392249caa"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 04:28:20.306413",
     "email": "",
@@ -1667,7 +1667,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0824_050248.jpg?alt=media&token=ab152a74-dc87-4488-9133-b6345aa14c24"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 05:03:09.725912",
     "email": "",
@@ -1680,7 +1680,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-05-21-40-222_com.wheelocity.wow_customer_pos.jpg?alt=media&token=d451d96c-adad-4439-bffb-78c989d583a4"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "hftvv",
     "createdAt": "2025-08-24 05:22:00.759566",
     "email": "",
@@ -1693,7 +1693,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-05-31-50-01_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=b2a1f4de-bd96-4f2a-80c8-0b69d534683e"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 05:32:15.318369",
     "email": "",
@@ -1706,7 +1706,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-05-43-01-62_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=75db8605-31a8-4652-9b95-2aae587fb6b2"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-24 05:43:21.838967",
     "email": "",
@@ -1719,7 +1719,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-06-07-06-804_com.wheelocity.wow_customer_pos.jpg?alt=media&token=500a7911-baaa-4285-bc9b-ae47145c25c2"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 06:07:26.049253",
     "email": "",
@@ -1732,7 +1732,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-06-08-56-20_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=587c1d16-e616-4805-b984-34057809f50b"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-24 06:09:12.936362",
     "email": "",
@@ -1745,7 +1745,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-06-32-06-814_com.wheelocity.wow_customer_pos.jpg?alt=media&token=7bb5454e-2b7f-4b31-9b72-9be29fe02c9a"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 06:32:22.754857",
     "email": "",
@@ -1758,7 +1758,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-06-33-13-840_com.wheelocity.wow_customer_pos.jpg?alt=media&token=2b0b0d85-469f-47fc-8f56-a621b18642e8"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 06:34:04.636342",
     "email": "",
@@ -1771,7 +1771,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-06-36-57-50.jpg?alt=media&token=4fc41f70-ac4c-441e-b51b-b86d95321cec"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "helpe",
     "createdAt": "2025-08-24 06:37:23.040847",
     "email": "",
@@ -1784,7 +1784,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-07-26-08-50_92460851df6f172a4592fca41cc2d2e6.jpg?alt=media&token=e86b8554-4a37-458a-829a-3627e2593985"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "close error ",
     "createdAt": "2025-08-24 07:28:26.582309",
     "email": "",
@@ -1797,7 +1797,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000071657.jpg?alt=media&token=97856a0f-b8fb-45eb-a386-212110972305"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 08:02:02.781380",
     "email": "",
@@ -1810,7 +1810,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-08-24-19-327_com.wheelocity.wow_customer_pos.jpg?alt=media&token=221cde0d-3a2b-4ce6-8e3e-9d128775ee84"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 08:24:34.769963",
     "email": "",
@@ -1823,7 +1823,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250824_085344.jpg?alt=media&token=28c71ee8-3f4e-4a9a-a6b1-16cdd70c2178"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 08:54:02.065509",
     "email": "",
@@ -1836,7 +1836,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-08-55-44-02_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=8435e894-95ad-4414-8a8a-2cf228fff30a"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 08:56:04.927989",
     "email": "",
@@ -1849,7 +1849,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250824_093259.jpg?alt=media&token=aa19f8a6-3b56-4fda-9b5a-e581939d30d1"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 09:33:16.032116",
     "email": "",
@@ -1862,7 +1862,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0824_100248.jpg?alt=media&token=86003b78-5b98-4a5b-adf7-92c074006205"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 10:03:04.744940",
     "email": "",
@@ -1876,7 +1876,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-11-05-23-09_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=421989a0-5e8b-47b2-8f1f-e73c710b06ec",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000809393.jpg?alt=media&token=a2fec039-94f5-4d5d-8e09-fec325f8bf87"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-24 11:05:55.156058",
     "email": "",
@@ -1889,7 +1889,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-11-17-58-11.jpg?alt=media&token=d49fa876-8ae0-42e0-a170-8878c6df44b3"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "மாதுளை பில் போட option இல்லை",
     "createdAt": "2025-08-24 11:18:43.630342",
     "email": "",
@@ -1902,7 +1902,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-20-49-37-67_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=85dd4085-4920-4d42-ad43-2c9ffa3939c4"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 20:50:19.444884",
     "email": "",
@@ -1915,7 +1915,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-20-57-07-422_com.wheelocity.wow_customer_pos.jpg?alt=media&token=028c445a-41da-449e-abf6-8255626f46b4"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 21:10:22.503384",
     "email": "",
@@ -1928,7 +1928,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-24-21-13-39-82_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=a0bd9e74-71c6-4d6d-ad82-31117d6a139c"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-24 21:14:07.993452",
     "email": "",
@@ -1942,7 +1942,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825_045638.jpg?alt=media&token=89d5e74d-bf19-4d89-8896-87190ec8d4a5",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000019781.jpg?alt=media&token=3b92f338-26a5-43f1-b1a3-e0d6474079f6"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "bringal too worst quality please change it different bringal ",
     "createdAt": "2025-08-25 04:58:36.763518",
     "email": "",
@@ -1955,7 +1955,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825_051010.jpg?alt=media&token=4df9f3ca-b79d-4ba0-a5c9-2683c7f1b1df"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-25 05:10:25.025697",
     "email": "",
@@ -1969,7 +1969,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825-061444.jpg?alt=media&token=06d7bcb0-da91-489c-af0b-d12ea764a327",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000364775.jpg?alt=media&token=971e3fb8-d3ca-4c6c-abeb-45c3cf8b0fec"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "bill as  a i have one bill same duple bill rottine",
     "createdAt": "2025-08-25 06:19:04.790744",
     "email": "",
@@ -1982,7 +1982,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-25-06-32-50-145_com.wheelocity.wow_customer_pos.jpg?alt=media&token=92083c5f-8fff-43d0-9550-be4c64d10843"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-25 06:33:05.738310",
     "email": "",
@@ -1995,7 +1995,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825-073201.png?alt=media&token=e1cff413-6bb9-41dd-9b26-2ec5b3dd1c9e"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-25 07:40:38.353650",
     "email": "",
@@ -2008,7 +2008,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825-080715.jpg?alt=media&token=6193754c-db69-448b-9bd9-8373574aaba7"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-25 08:07:33.947817",
     "email": "",
@@ -2021,7 +2021,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0825_112145.jpg?alt=media&token=627d2105-08fe-4786-b59c-74b9a1503b48"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-25 11:22:08.762167",
     "email": "",
@@ -2034,7 +2034,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825_161904_WoW.jpg?alt=media&token=b8b424fc-cd36-437d-93c2-e87cfaccff17"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-25 16:19:37.871703",
     "email": "",
@@ -2047,7 +2047,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250825-214403.png?alt=media&token=c6e102e4-b573-40ad-92eb-0af922372979"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "didn't still now received in incentive ",
     "createdAt": "2025-08-25 21:45:57.144776",
     "email": "",
@@ -2060,7 +2060,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-26-05-03-33-67_f40a83f504dccd7f68fe1f6e8cd8ec9a.jpg?alt=media&token=2aace6e3-dd62-4e6f-b778-daaf7eb38f8c"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-26 05:05:59.255024",
     "email": "",
@@ -2073,7 +2073,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000253881.jpg?alt=media&token=5fc8ceee-7b0d-4322-a1d0-4f318e83cdf7"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "please don't disturb ",
     "createdAt": "2025-08-26 06:58:54.868828",
     "email": "",
@@ -2086,7 +2086,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250826_083754.jpg?alt=media&token=241eac97-afe4-436b-b26b-e8c7c1d9ad9f"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-26 08:40:59.424904",
     "email": "",
@@ -2099,7 +2099,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0826_092454.jpg?alt=media&token=8633d2c9-4b4e-4e42-a0e7-2e18755da686"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-26 09:25:27.005863",
     "email": "",
@@ -2112,7 +2112,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0826_111655.jpg?alt=media&token=6bb18c36-6a46-46a7-94b7-9b4aadcf809d"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-26 11:17:17.153840",
     "email": "",
@@ -2125,7 +2125,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000178844.jpg?alt=media&token=298b3b0f-b523-43fa-8c23-e463e656d7be"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "No",
     "createdAt": "2025-08-26 15:26:49.819240",
     "email": "",
@@ -2138,7 +2138,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250826_181205.jpg?alt=media&token=e0166ce6-47b1-49fd-8f05-ada401e909d5"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "yes not bjp working \n",
     "createdAt": "2025-08-26 18:12:51.062717",
     "email": "",
@@ -2152,7 +2152,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250827_054933.jpg?alt=media&token=5dc55742-d133-4b25-99ad-b37e207e7747",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000060361.jpg?alt=media&token=6c3e188a-1d93-46eb-8754-bb3b7e64a0d0"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "risive problem ",
     "createdAt": "2025-08-27 05:50:20.692489",
     "email": "",
@@ -2165,7 +2165,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250827_081154.jpg?alt=media&token=0f2d08a6-8890-4e59-a15e-affaef27813b"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "எல்லாம் விலை அதிகம் மாற்றி kodukkavu",
     "createdAt": "2025-08-27 08:13:15.913795",
     "email": "",
@@ -2178,7 +2178,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_Screenshot_2025-08-27-08-57-02-98.jpg?alt=media&token=a4cf65dd-9ce5-4790-a4c0-7e2c2c6aa895"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "all vegetables waste quality ",
     "createdAt": "2025-08-27 09:59:45.906845",
     "email": "",
@@ -2191,7 +2191,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0827_102834.jpg?alt=media&token=dc0032aa-5740-496c-8982-05a47ff0e968"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-27 10:28:57.970621",
     "email": "",
@@ -2204,7 +2204,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250827-165753.jpg?alt=media&token=2e839d10-f9be-4e59-a1d8-383c4fdb4293"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-27 16:58:10.058882",
     "email": "",
@@ -2217,7 +2217,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250827_171037.jpg?alt=media&token=436a642a-4723-4555-b5c2-4c6b7eb3a276"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-27 17:11:12.508636",
     "email": "",
@@ -2230,7 +2230,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0828_044550.jpg?alt=media&token=b463a716-8e26-4fd8-9f90-78ab9ba49b53"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 04:46:18.213453",
     "email": "",
@@ -2243,7 +2243,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-28-04-30-39-53.jpg?alt=media&token=64cc0ba2-6ebc-4751-985d-61e6cc013210"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 05:44:54.795891",
     "email": "",
@@ -2257,7 +2257,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-28-08-26-41-888_com.wheelocity.wow_customer_pos.jpg?alt=media&token=f327ba45-dd04-4df6-92ae-c9bb68edf359",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000922313.jpg?alt=media&token=d00080c4-61fe-4b1b-91ed-65aec698948d"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "rate card version not found",
     "createdAt": "2025-08-28 08:27:39.844593",
     "email": "",
@@ -2270,7 +2270,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-28-08-29-09-94_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=f79c4393-fba2-4948-b653-dff6b7522943"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "again again coming the confirm bill can't take ",
     "createdAt": "2025-08-28 08:31:57.194617",
     "email": "",
@@ -2283,7 +2283,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250828_102717.jpg?alt=media&token=88177f3c-ef62-4243-bc87-8d050299872d"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 10:27:35.898444",
     "email": "",
@@ -2296,7 +2296,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-27-16-51-52-20.jpg?alt=media&token=486fdaa6-f1d6-47c3-99f5-7e340196f708"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 10:31:48.981031",
     "email": "",
@@ -2309,7 +2309,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250828_110449.jpg?alt=media&token=64bcb17a-b1cb-40c5-95b7-785c6bce35be"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 11:05:13.387818",
     "email": "",
@@ -2322,7 +2322,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-28-20-33-15-87_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=c667dfe2-9206-4cb2-ae30-774f38e81a1e"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-28 20:33:42.869210",
     "email": "",
@@ -2335,7 +2335,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-29-06-01-04-656_com.wheelocity.wow_customer_pos.jpg?alt=media&token=f6e21cb1-4e06-4fd9-b2cc-8b96f8a9f852"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-29 06:01:25.566718",
     "email": "",
@@ -2350,7 +2350,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000175330.jpg?alt=media&token=0d41eee5-5a93-4939-b181-dc1557b7f303",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000175329.jpg?alt=media&token=1a33c22b-6f25-4693-961e-7892502c0d78"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "1 extra bill",
     "createdAt": "2025-08-29 07:30:29.388821",
     "email": "",
@@ -2363,7 +2363,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-29-08-14-33-131_com.wheelocity.wow_customer_pos.jpg?alt=media&token=3172ebd3-5383-4ed5-8ccd-23823ae278d9"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-29 08:14:58.788379",
     "email": "",
@@ -2376,7 +2376,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-29-08-56-00-905_com.wheelocity.wow_customer_pos.jpg?alt=media&token=3cfb2397-b313-4299-883b-29b683733a73"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-29 08:56:21.628767",
     "email": "",
@@ -2389,7 +2389,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0829_094255.jpg?alt=media&token=5406641d-271d-4bca-8db5-8d5965762077"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-29 09:43:12.063158",
     "email": "",
@@ -2402,7 +2402,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-30-04-26-27-33_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=6ffa3b36-be1a-4bf3-af53-f01b7d60ac35"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "Not ",
     "createdAt": "2025-08-30 04:26:48.212103",
     "email": "",
@@ -2415,7 +2415,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-30-06-05-08-08_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=3825b37d-6230-4797-87cc-2e2bd08b36e4"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-30 06:05:27.932913",
     "email": "",
@@ -2428,7 +2428,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000305940.jpg?alt=media&token=731bf21d-39b0-4618-9181-6587efd17b1d"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "again again pop come",
     "createdAt": "2025-08-30 07:07:05.650531",
     "email": "",
@@ -2441,7 +2441,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250830_094748.jpg?alt=media&token=9871b5ab-39d4-40e6-abe8-60c9ddad5bf1"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-30 09:48:03.778582",
     "email": "",
@@ -2454,7 +2454,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-30-10-36-07-34_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=b8407cb1-cbfa-4b1c-8831-db71eb0616b9"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-30 10:36:55.251094",
     "email": "",
@@ -2467,7 +2467,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-30-16-16-36-61_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=89f4c1e1-e035-4234-b12e-05eebf288c4b"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-30 16:17:27.354390",
     "email": "",
@@ -2480,7 +2480,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-30-16-17-14-98_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=bd1e570a-f896-4371-bc12-d33677b8d429"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-30 16:17:44.307148",
     "email": "",
@@ -2493,7 +2493,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-04-44-42-804_com.wheelocity.wow_customer_pos.jpg?alt=media&token=297df685-cc9a-4b97-a055-06ee132b6c24"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 04:45:28.113697",
     "email": "",
@@ -2506,7 +2506,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-06-20-58-53_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=51186884-c8ed-43f4-821e-cd94005dc871"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 06:21:27.976728",
     "email": "",
@@ -2519,7 +2519,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-06-17-00-061_com.miui.calculator.jpg?alt=media&token=274443f1-b27c-4531-bd1e-9e8cd934ad07"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 06:30:17.128880",
     "email": "",
@@ -2532,7 +2532,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250831_075811.jpg?alt=media&token=b9f6c62d-2a70-4605-a049-4ab7708a4598"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 07:58:29.485026",
     "email": "",
@@ -2545,7 +2545,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-09-52-17-068_com.wheelocity.wow_customer_pos.jpg?alt=media&token=789aafec-350b-4ae6-9d15-53bfcddee2c4"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-08-31 09:53:21.943130",
     "email": "",
@@ -2558,7 +2558,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-10-41-49-433_com.wheelocity.wow_customer_pos.jpg?alt=media&token=a5c7bfa8-3c28-45f6-a230-98f2ebdb9230"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 10:42:13.836781",
     "email": "",
@@ -2571,7 +2571,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0831_104829.jpg?alt=media&token=e3b63a42-5828-49c2-b46b-9ab36065e69d"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 10:49:00.134378",
     "email": "",
@@ -2584,7 +2584,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-08-31-18-26-30-228_com.wheelocity.wow_customer_pos.jpg?alt=media&token=d7a784e7-b800-4e42-bdcb-3fa23886bc60"
     ],
-    "category": "success_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-08-31 18:26:47.753430",
     "email": "",
@@ -2594,7 +2594,7 @@
     "userId": "10508"
   },
   "-OZ-dLGSxb8GRMI4d2NX": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-08-31 20:31:25.627129",
     "email": "",
@@ -2607,7 +2607,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250901-052427.png?alt=media&token=7a66b6c1-da2a-45c0-92ab-15c1aa53d78f"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-01 05:24:47.131993",
     "email": "",
@@ -2620,7 +2620,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-01-05-51-48-22.jpg?alt=media&token=c7dc684f-0dd5-45d4-bf99-794a0259c56e"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-01 05:52:09.599058",
     "email": "",
@@ -2633,7 +2633,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-01-06-49-22-127_com.android.incallui.jpg?alt=media&token=6ae69561-0edf-422b-b02c-c8039cf2653d"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-01 06:50:54.139762",
     "email": "",
@@ -2646,7 +2646,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0901_110614.jpg?alt=media&token=d9760f41-af95-4bae-94a5-cf265c5566ee"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-01 11:06:38.792409",
     "email": "",
@@ -2659,7 +2659,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250902-045051.png?alt=media&token=930720fe-10b8-446b-b02e-865b39e75416"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-02 04:58:46.204762",
     "email": "",
@@ -2672,7 +2672,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0902_050747.jpg?alt=media&token=9377c940-0b34-4d52-b9ad-0a2eafab4efa"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-02 05:08:19.229080",
     "email": "",
@@ -2686,7 +2686,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250902-051923.WoW.png?alt=media&token=d06f7ebb-5ecd-42e2-820e-b775bc01217d",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000252181.png?alt=media&token=a7ede3c7-4356-4350-a540-20a5f661ff2d"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "all vegetables are different weight 10 to 20 grams. bitter guard weight lose 20 grams.",
     "createdAt": "2025-09-02 05:21:24.988648",
     "email": "",
@@ -2699,7 +2699,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-02-06-04-08-34_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=2b40ff55-c9a9-4b19-85e8-8abe11912aa7"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-02 06:04:31.425631",
     "email": "",
@@ -2712,7 +2712,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250902-062318.WoW.png?alt=media&token=012b4c4a-89b0-4787-bf4d-fe6dcffe4c65"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-02 06:23:35.711582",
     "email": "",
@@ -2725,7 +2725,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000069380.jpg?alt=media&token=53618bfc-6532-411c-9550-98b4764b2cf1"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-02 10:59:00.385920",
     "email": "",
@@ -2735,7 +2735,7 @@
     "userId": "3430"
   },
   "-OZBuMt7EwfRYvW8RJw4": {
-    "category": "no_attachments",
+    "category": "unclear_insufficient_info",
     "comment": "stop the notification ",
     "createdAt": "2025-09-03 05:40:57.838595",
     "email": "",
@@ -2749,7 +2749,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250903_054149.jpg?alt=media&token=6305bf83-cb08-4f90-8214-2964098e68b4",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000519159.jpg?alt=media&token=a023c5b6-e5fa-45a0-8807-51698cf96803"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-03 05:42:12.397063",
     "email": "",
@@ -2762,7 +2762,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-03-06-17-13-73_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=c32e5e70-bc9a-4936-8099-136c62fcb063"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-03 06:17:36.363808",
     "email": "",
@@ -2776,7 +2776,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-03-06-41-57-72_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=1e6148bd-ad0f-4eac-bf7a-9b66ab08807d",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_8190.jpg?alt=media&token=7e3afb65-e6dc-4a80-8f49-ed9b09b52e7e"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "bill not submitted ",
     "createdAt": "2025-09-03 06:42:51.445692",
     "email": "",
@@ -2789,7 +2789,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0903_104519.jpg?alt=media&token=78d526cc-88ca-41ec-97dc-6860d3f17fdd"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-03 10:45:33.303841",
     "email": "",
@@ -2802,7 +2802,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-03-19-13-14-29_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=ee5bed02-e776-44b0-9fee-35877d766f48"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "no coin showed",
     "createdAt": "2025-09-03 19:13:50.507435",
     "email": "",
@@ -2815,7 +2815,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-03-19-54-06-83_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=33112481-e5eb-49c1-b5a3-548e20fc29a4"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "very good ",
     "createdAt": "2025-09-03 19:55:04.352388",
     "email": "",
@@ -2828,7 +2828,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250904_072806.jpg?alt=media&token=fd8235a7-aaaf-40d6-99cb-7e76002f6829"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-04 07:28:24.922858",
     "email": "",
@@ -2841,7 +2841,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0904_104703.jpg?alt=media&token=6d758506-e10a-4c69-b29b-45a9d7e9de93"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-04 10:47:18.259105",
     "email": "",
@@ -2854,7 +2854,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-05-05-01-51-30_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=6920ccbe-82ea-4168-b3b0-074eded11a7b"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-05 05:02:10.394666",
     "email": "",
@@ -2867,7 +2867,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250905-050944.png?alt=media&token=31411744-77aa-49fe-8560-01447fa8ee90"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-05 05:10:04.746714",
     "email": "",
@@ -2880,7 +2880,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0905_051734.jpg?alt=media&token=af585405-e1cc-4602-8a19-5acd11003dd8"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "bitter guard மூத்தி உள்ளது ",
     "createdAt": "2025-09-05 05:18:45.971809",
     "email": "",
@@ -2893,7 +2893,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_25680905_063227.jpg?alt=media&token=08fa32f8-75d8-4ce2-a8f0-853ba098215c"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-05 06:32:47.821502",
     "email": "",
@@ -2906,7 +2906,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-05-06-41-24-41_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=73e4fd16-1fb6-43c5-9d1f-0422bea26ca2"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "bill not delivered ",
     "createdAt": "2025-09-05 06:43:13.961580",
     "email": "",
@@ -2916,7 +2916,7 @@
     "userId": "10889"
   },
   "-OZMdvRyNwzxlNcvrq82": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-05 07:45:10.146781",
     "email": "",
@@ -2929,7 +2929,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-05-07-45-06-01_21e8cabcf42c673ec340bb67ba55b55b.jpg?alt=media&token=2ee66f3b-84e3-4abb-b7aa-1bffb92bd601"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "வெஜ் சரியியில்ல ப்ரோ ",
     "createdAt": "2025-09-05 07:48:01.510616",
     "email": "",
@@ -2942,7 +2942,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250906-051440.png?alt=media&token=0cac153b-f332-4c54-a210-e1017c643ecd"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 05:15:11.624720",
     "email": "",
@@ -2955,7 +2955,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-06-05-52-11-58_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=4cb45e31-c8be-44e4-aa27-fcc0e7cacd80"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 05:52:29.897254",
     "email": "",
@@ -2969,7 +2969,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250906_062213.jpg?alt=media&token=4fb09fb5-9267-432e-b678-c995c48ac85c",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000214645.jpg?alt=media&token=c8ac493a-6385-4893-a53c-56ac8fd0609b"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 06:22:39.822487",
     "email": "",
@@ -2982,7 +2982,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-06-06-22-40-725_com.wheelocity.wow_customer_pos.jpg?alt=media&token=d2104eb5-ac73-47a9-8f35-2d3f70e1779c"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "rate card not found",
     "createdAt": "2025-09-06 06:23:08.236524",
     "email": "",
@@ -2995,7 +2995,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250906-070856.jpg?alt=media&token=89c6a5c2-31ba-47ed-90cd-95b9bcb9f9e2"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "hzhs",
     "createdAt": "2025-09-06 07:09:19.917287",
     "email": "",
@@ -3008,7 +3008,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-06-08-56-35-730_com.wheelocity.wow_customer_pos.jpg?alt=media&token=0de1b957-0f0a-498e-990e-a3dcfd25bb22"
     ],
-    "category": "transaction_screens",
+    "category": "functional_errors",
     "comment": "ennoda choice not working",
     "createdAt": "2025-09-06 08:57:01.270502",
     "email": "",
@@ -3021,7 +3021,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0906_110123.jpg?alt=media&token=8b4956fa-da80-40b7-a15d-a6c0280cf936"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 11:01:42.385542",
     "email": "",
@@ -3034,7 +3034,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250906_110311.jpg?alt=media&token=fef10032-eb24-4ca4-ba69-64e4bfea9fb7"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 11:03:30.039830",
     "email": "",
@@ -3047,7 +3047,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-06-18-39-57-38_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=6219380f-30d6-40fe-95e8-2559a3d1a48f"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-06 18:40:36.962847",
     "email": "",
@@ -3060,7 +3060,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-07-05-24-04-80_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=67d7c4c7-fac8-4f46-9af3-ca09f9f946f9"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 05:24:20.271737",
     "email": "",
@@ -3073,7 +3073,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000297932.jpg?alt=media&token=0bdbd703-a717-4e4a-8fbf-967f86f87408"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "hj",
     "createdAt": "2025-09-07 06:25:15.741351",
     "email": "",
@@ -3086,7 +3086,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250907-065435.jpg?alt=media&token=354e4cd7-567d-4674-a66f-1d4ac9b52063"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 06:55:00.496071",
     "email": "",
@@ -3099,7 +3099,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-07-08-44-40-910_com.wheelocity.wow_customer_pos.jpg?alt=media&token=b6523a7d-e255-4cfa-be5a-b49ba154fa64"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-07 08:45:10.952333",
     "email": "",
@@ -3112,7 +3112,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-07-09-06-53-961_com.wheelocity.wow_customer_pos.jpg?alt=media&token=49ed6858-8f36-4f10-a039-8668d38d7a92"
     ],
-    "category": "form_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 09:07:57.148463",
     "email": "",
@@ -3125,7 +3125,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-07-09-10-05-488_com.wheelocity.wow_customer_pos.jpg?alt=media&token=9c711786-8167-4b05-840a-0215ea6d76c9"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 09:10:27.518137",
     "email": "",
@@ -3138,7 +3138,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250903_074302.jpg?alt=media&token=633da25d-a4aa-45ea-a7b4-d4c798726fae"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 09:39:17.771728",
     "email": "",
@@ -3151,7 +3151,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-07-21-50-05-59_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=523723aa-4ccd-49f1-a4da-c3400008e8ea"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-07 21:50:57.522380",
     "email": "",
@@ -3164,7 +3164,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250908-073331.jpg?alt=media&token=2dbff826-5711-45da-b1c5-a9673b2c7097"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "sir auto receive supply ok ",
     "createdAt": "2025-09-08 07:35:00.724660",
     "email": "",
@@ -3174,7 +3174,7 @@
     "userId": "4422"
   },
   "-OZb6_pPfBCRxLr5jQIb": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-08 07:48:54.245477",
     "email": "",
@@ -3187,7 +3187,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250908_083014.jpg?alt=media&token=7988da36-838a-4067-8c74-86560f84ee95"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-08 08:30:38.726513",
     "email": "",
@@ -3200,7 +3200,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250908_084316.jpg?alt=media&token=0b83bdb1-b7d3-4630-81d9-7cc83df56dc6"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "sale not assigned ",
     "createdAt": "2025-09-08 08:43:58.433926",
     "email": "",
@@ -3213,7 +3213,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250908-094456.jpg?alt=media&token=1d8dc268-f9c4-41db-b941-029f1593c543"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-08 09:45:16.700830",
     "email": "",
@@ -3226,7 +3226,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-05-14-27-328_com.wheelocity.wow_customer_pos.jpg?alt=media&token=0ef86715-f53e-42b5-b006-4ac0da8ec9cd"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 05:14:53.737334",
     "email": "",
@@ -3240,7 +3240,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-05-55-35-773_com.wheelocity.wow_customer_pos.jpg?alt=media&token=ff53cbfa-890b-4346-8c4b-b2a70ac29e07",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000289537.jpg?alt=media&token=b075c976-d995-4a51-82e8-ca7f9aa49d56"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 05:56:05.897972",
     "email": "",
@@ -3253,7 +3253,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-05-57-47-37_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=af9bc2f5-82b8-46d4-bbae-b2eeb13b201d"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "bill submit not working ",
     "createdAt": "2025-09-09 05:58:19.575624",
     "email": "",
@@ -3266,7 +3266,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909-055814.jpg?alt=media&token=d8fe0917-d55d-4b96-94fa-62ac17f8b7d9"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 05:58:38.893914",
     "email": "",
@@ -3279,7 +3279,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_055820.jpg?alt=media&token=490cbdbc-44db-4ef3-a149-fcd0eed4fe5b"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 05:59:25.847381",
     "email": "",
@@ -3292,7 +3292,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-06-01-12-389_com.wheelocity.wow_customer_pos.jpg?alt=media&token=fc6d1070-df37-4ada-ae38-596d8f6c839d"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-09 06:01:32.107735",
     "email": "",
@@ -3305,7 +3305,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-06-02-33-98_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=3a1e809d-177b-4737-ab97-88d109d4a77b"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "rate card not found bug please slove ",
     "createdAt": "2025-09-09 06:03:08.120825",
     "email": "",
@@ -3318,7 +3318,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-06-09-31-018_com.wheelocity.wow_customer_pos.jpg?alt=media&token=894d2538-8e86-42ba-998c-df0dbfcf8581"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 06:09:54.239231",
     "email": "",
@@ -3332,7 +3332,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-06-18-03-98_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=07bd4479-543c-4e2c-bc5e-c6e9eabcdf4c",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000211052.jpg?alt=media&token=1ef1acff-c704-403f-9cae-b350f4e603fd"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 06:18:31.755743",
     "email": "",
@@ -3345,7 +3345,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-06-19-01-428_com.wheelocity.wow_customer_pos.jpg?alt=media&token=6d1d82a4-774c-4e37-8ffc-8e9b728ea80e"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 06:19:34.612451",
     "email": "",
@@ -3358,7 +3358,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_062020.jpg?alt=media&token=e0abcb0b-4d3d-4e09-b2e7-c6ee8e8e531a"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 06:20:36.120410",
     "email": "",
@@ -3368,7 +3368,7 @@
     "userId": "10641"
   },
   "-OZfxc08tCxxNPmRZe5z": {
-    "category": "no_attachments",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 06:23:57.502403",
     "email": "",
@@ -3377,7 +3377,7 @@
     "userId": "8498"
   },
   "-OZfyP1ZMagirLr5Q-Mu": {
-    "category": "no_attachments",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 06:26:52.066018",
     "email": "",
@@ -3390,7 +3390,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_062727.jpg?alt=media&token=f235dabd-0380-44d2-b06e-fc30b16133e2"
     ],
-    "category": "error_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 06:28:21.623096",
     "email": "",
@@ -3403,7 +3403,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_062731.jpg?alt=media&token=7ac2126f-e71d-47b3-bd37-20d94c355c15"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-09 06:27:50.704301",
     "email": "",
@@ -3416,7 +3416,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_074110.jpg?alt=media&token=ad45f159-d0ae-4160-9609-493c519fb748"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 07:41:28.829316",
     "email": "",
@@ -3429,7 +3429,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-07-41-48-44_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=d7624f17-e097-43a4-8de8-12f628677b9e"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 07:42:13.268233",
     "email": "",
@@ -3442,7 +3442,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-09-55-13-684_com.wheelocity.wow_customer_pos.jpg?alt=media&token=bac0b7a8-6daa-42c9-ba5d-12ae5d701dc9"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 09:55:53.673068",
     "email": "",
@@ -3455,7 +3455,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-09-57-18-56_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=f14ded1b-5d34-42f3-917f-74b1903b98ad"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 09:58:05.958384",
     "email": "",
@@ -3468,7 +3468,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-10-08-46-23_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=c853606e-d540-4c89-ae60-7324c28809a0"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 10:09:11.595943",
     "email": "",
@@ -3481,7 +3481,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-10-12-43-75_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=c6e5ce32-af66-4df8-b405-3d199feba610"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 10:13:02.174654",
     "email": "",
@@ -3494,7 +3494,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_110304.jpg?alt=media&token=78af65f1-1815-4a5b-b0f1-b0f811da80b8"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 11:03:28.865975",
     "email": "",
@@ -3507,7 +3507,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-11-50-39-58_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=d12af283-6cd3-48f1-92b8-232d8dbbd8fc"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 11:53:13.657506",
     "email": "",
@@ -3520,7 +3520,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250909_160002.jpg?alt=media&token=f2c8ffbf-4f9c-465b-8a1a-559923563dea"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 16:00:18.031321",
     "email": "",
@@ -3533,7 +3533,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-09-17-48-35-80_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=eb40f078-588b-4f0e-8273-aaca95879231"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-09 17:48:55.406410",
     "email": "",
@@ -3547,7 +3547,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250910_052801.jpg?alt=media&token=3a6e3822-b561-4bca-9e31-3f5aa66e6cbe",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000140668.jpg?alt=media&token=c40c63be-c915-4478-bf87-27cf146c815e"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-10 05:29:06.510597",
     "email": "",
@@ -3560,7 +3560,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-10-05-55-44-81_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=5aa085b1-3682-4627-b721-c08996643fe1"
     ],
-    "category": "error_screens",
+    "category": "connectivity_problems",
     "comment": "net issue",
     "createdAt": "2025-09-10 05:56:10.230996",
     "email": "",
@@ -3573,7 +3573,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-10-06-14-52-09_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=953bba00-ab3f-416a-90f2-c4b13cba67f8"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-10 06:15:30.831240",
     "email": "",
@@ -3586,7 +3586,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250910_062930.jpg?alt=media&token=e32dd83a-dc2c-4427-9d34-a22597acef61"
     ],
-    "category": "error_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-10 06:30:24.493624",
     "email": "",
@@ -3599,7 +3599,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250910_080029.jpg?alt=media&token=fb05257b-d4a3-478f-899a-64dd65fa9cac"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-10 08:00:59.630399",
     "email": "",
@@ -3612,7 +3612,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250910_080628.jpg?alt=media&token=ccd0a9a2-dc9e-427e-b506-ee102b0a6785"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-10 08:06:55.389767",
     "email": "",
@@ -3625,7 +3625,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0910_101229.jpg?alt=media&token=b298639b-7bcc-4c34-8eb2-30866582b864"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "nsj",
     "createdAt": "2025-09-10 10:14:39.072719",
     "email": "",
@@ -3638,7 +3638,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-10-10-25-15-18_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=9fcd1f46-907f-4ef7-865c-850b0412416e"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "hdud",
     "createdAt": "2025-09-10 10:25:49.433949",
     "email": "",
@@ -3651,7 +3651,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250911_043441.jpg?alt=media&token=0cbcb652-1b90-4e6d-969a-8c57c3bb9f45"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-11 04:35:09.557018",
     "email": "",
@@ -3664,7 +3664,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-11-05-51-55-640_com.wheelocity.wow_customer_pos.jpg?alt=media&token=ce4f793d-a8fb-4314-a6ca-07ff678da681"
     ],
-    "category": "transaction_screens",
+    "category": "integration_failures",
     "comment": "",
     "createdAt": "2025-09-11 05:52:14.856715",
     "email": "",
@@ -3677,7 +3677,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-11-09-10-01-843_com.wheelocity.wow_customer_pos.jpg?alt=media&token=56fc34b1-9dce-49b7-8bb7-97b55b1ac177"
     ],
-    "category": "navigation_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-11 09:10:19.422065",
     "email": "",
@@ -3690,7 +3690,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FIMG_20250911_101054.jpg?alt=media&token=cb40e3fd-df53-4055-a2dc-d5660e9b53d8"
     ],
-    "category": "image_files",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-11 10:29:42.193479",
     "email": "",
@@ -3703,7 +3703,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-11-10-50-51-086_com.wheelocity.wow_customer_pos.jpg?alt=media&token=3e6168e0-9d35-4b27-80dd-84acb8149bee"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-11 10:51:08.081363",
     "email": "",
@@ -3716,7 +3716,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250913_071919.jpg?alt=media&token=83743260-9c12-4ac0-bead-73891d7014c2"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-13 07:20:12.130960",
     "email": "",
@@ -3730,7 +3730,7 @@
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-13-09-02-48-20_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=a6d23609-9ac9-4199-86d8-d41b26b020b7",
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2Fscaled_1000212518.jpg?alt=media&token=4cd27039-8cd9-4c6f-9a86-e07564628d04"
     ],
-    "category": "error_screens",
+    "category": "functional_errors",
     "comment": "",
     "createdAt": "2025-09-13 09:05:25.224460",
     "email": "",
@@ -3743,7 +3743,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-13-09-39-56-468_com.wheelocity.wow_customer_pos.jpg?alt=media&token=bb700830-2820-4992-aca0-25a3ec20aec8"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-13 09:40:15.842948",
     "email": "",
@@ -3756,7 +3756,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-14-07-44-27-100_com.wheelocity.wow_customer_pos.jpg?alt=media&token=a20ce3ec-c330-485c-bd9a-b1eb5b51b7d4"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-14 07:44:50.468527",
     "email": "",
@@ -3769,7 +3769,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025-09-16-10-43-16-37_8c6ef806cec84a986bc714a6285db756.jpg?alt=media&token=4a72db00-7eaf-43c0-8e34-450bbece29b4"
     ],
-    "category": "transaction_screens",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-16 10:43:35.089911",
     "email": "",
@@ -3782,7 +3782,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_20250916_142326.jpg?alt=media&token=6ce4a7ce-3075-4b44-b5e0-0472093d5a89"
     ],
-    "category": "general_screenshots",
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-16 14:30:41.997415",
     "email": "",
@@ -3795,6 +3795,7 @@
     "attachments": [
       "https://firebasestorage.googleapis.com/v0/b/signintest-84632.firebasestorage.app/o/bug_reports%2FScreenshot_2025_0917_112631.jpg?alt=media&token=54e6e7a5-dd23-40bc-984d-d52d30c66b0a"
     ],
+    "category": "unclear_insufficient_info",
     "comment": "",
     "createdAt": "2025-09-17 11:27:00.609277",
     "email": "",
