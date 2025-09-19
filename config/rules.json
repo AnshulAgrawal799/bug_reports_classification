@@ -43,6 +43,29 @@
       "coins_word": "\\bcoins?\\b"
     }
   },
+  "regex_map": {
+    "\\bcoins?\\b": "data_integrity_issues",
+    "\\bamount\\b": "data_integrity_issues",
+    "\\bbalance\\b": "data_integrity_issues",
+    "\\bsell( amount)?\\b": "data_integrity_issues",
+    "\\b(rate ?card( not found| missing)?)\\b": "functional_errors",
+    "\\bstop( the)? notification(s)?\\b": "feature_requests",
+    "\\b(quality|qualit[yai]?|quali?ty|qulity|qualiy|bad quality|quality issue|damaged|damage|spoil(ed)?|spoilt|waste|dented)\\b": "product_quality_issues",
+    "(क्वालिटी|गुणवत्ता|डैमेज|टूटा|खराब|सड़ा|टूटी|डैमेज्ड)": "product_quality_issues",
+    "(குவாலிட்டி|குவாலிடி|குவாலிட்டி சரியில்லை|காய் குவாலிட்டி|கெட்ட|பாழான|பழுதான|சேதம|கேடு)": "product_quality_issues",
+    "\\b(worst quality|very bad quality|poor quality)\\b": "product_quality_issues",
+
+    "\\b(internet nahi|net problem|server band|network down|server nahi)\\b": "connectivity_problems",
+    "(नेट( ?समस्या)?|सर्वर डाउन|नेटवर्क समस्या)": "connectivity_problems",
+    "\\b(no internet|network error|server down|timeout)\\b": "connectivity_problems",
+
+    "\\b(otp nahi|otp नहीं|otp வரவில்லை|पासवर्ड|लॉगिन|साइन इन)\\b": "authentication_access",
+    "\\b(otp not received|otp failed|cannot login|cant login)\\b": "authentication_access",
+
+    "\\b(bhim|phonepe|gpay|paytm|tez)\\b": "integration_failures",
+    "\\b(upi fail(ed)?|payment fail(ed)?|payment pending|gateway error)\\b": "integration_failures",
+    "(यूपीआई|भुगतान|पेमेंट)": "integration_failures"
+  },
   "keyword_map": {
     "rate card not found": "functional_errors",
     "rate card version not found": "functional_errors",
@@ -108,12 +131,22 @@
     "razorpay": "integration_failures",
     "google": "integration_failures",
     "firebase": "integration_failures",
+    "gateway": "integration_failures",
+    "transaction failed": "integration_failures",
+    "barcode": "integration_failures",
+    "scan": "integration_failures",
 
     "settings": "configuration_settings",
     "configuration": "configuration_settings",
     "preference": "configuration_settings",
     "default value wrong": "configuration_settings",
-    "notification": "configuration_settings"
+    "notification": "configuration_settings",
+
+    "server down": "connectivity_problems",
+    "internet slow": "connectivity_problems",
+
+    "mpin": "authentication_access",
+    "forgot password": "authentication_access"
   },
   "disambiguation_examples": [
     {

@@ -26,6 +26,8 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from pipeline.mapping_rules import categorize_record_with_meta
+from pipeline.predictor import load_default_predictor
+from pipeline.translation import detect_and_translate
 
 
 def _collect_ocr_texts(record: Dict[str, Any]) -> List[str]:
@@ -52,7 +54,7 @@ def _collect_filenames(record: Dict[str, Any]) -> List[str]:
     return fns
 
 
-def relabel(input_path: Path, output_path: Path) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+def relabel(input_path: Path, output_path: Path, use_model: bool = False) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     data = json.loads(input_path.read_text(encoding='utf-8'))
     if not isinstance(data, dict):
         raise ValueError("Input JSON must be an object keyed by record IDs")
@@ -63,6 +65,8 @@ def relabel(input_path: Path, output_path: Path) -> Tuple[Dict[str, Any], Dict[s
     reason_counts = Counter()
     functional_errors_by_reason = Counter()
 
+    predictor = load_default_predictor() if use_model else None
+
     for rec_id, rec in data.items():
         if not isinstance(rec, dict):
             continue
@@ -72,11 +76,27 @@ def relabel(input_path: Path, output_path: Path) -> Tuple[Dict[str, Any], Dict[s
         ocr_texts = _collect_ocr_texts(rec)
         filenames = _collect_filenames(rec)
 
-        new_cat, conf, reason = categorize_record_with_meta(rec, ocr_texts=ocr_texts, filenames=filenames, model_pred=None)
+        # Language detection and translation to enrich signals (mirrors run_pipeline)
+        original_comment: str = rec.get('comment', '') or ''
+        translated_comment, detected_lang = detect_and_translate(original_comment)
+        if translated_comment:
+            rec['comment_translated'] = translated_comment
+
+        model_pred = None
+        if predictor and predictor.is_ready():
+            record_for_pred = dict(rec)
+            # Prefer translated comment for model if present
+            if rec.get('comment_translated'):
+                record_for_pred['comment_translated'] = rec['comment_translated']
+            model_pred = predictor.predict_from_record(record_for_pred, ocr_texts=ocr_texts, filenames=filenames)
+
+        new_cat, conf, reason = categorize_record_with_meta(rec, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
         rec['category'] = new_cat
         # Optionally update or set label_confidence
         rec['label_confidence'] = max(float(rec.get('label_confidence') or 0.0), conf)
         rec['label_reason'] = reason
+        if detected_lang and detected_lang != 'en' and translated_comment:
+            rec['detected_lang'] = detected_lang
 
         counts_after[new_cat] += 1
         reason_counts[reason] += 1
@@ -102,9 +122,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=Path, default=Path('final_output.json'))
     parser.add_argument('--output', type=Path, default=Path('final_output_relabel.json'))
+    parser.add_argument('--use-model', action='store_true', help='Use ML predictor to supply model_pred to rules')
     args = parser.parse_args()
 
-    changes, summary = relabel(args.input, args.output)
+    changes, summary = relabel(args.input, args.output, use_model=args.use_model)
 
     print(f"Relabeled file saved to: {args.output}")
     print(f"Total records: {summary['total_records']}")

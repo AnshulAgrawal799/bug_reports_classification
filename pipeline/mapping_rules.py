@@ -563,13 +563,17 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
     }
     adjusted = post_adjustment(model_pred, signals)
     if adjusted:
-        reason = 'post_adjustment'
-        return adjusted, _compute_confidence(0, _structured_tokens_present(comment), strong_rule_applied, model_pred is not None, adjusted), reason
+        # If post_adjustment suggests a specific non-unclear category (e.g., due to explicit signals), accept it now.
+        if adjusted != 'unclear_insufficient_info':
+            reason = 'post_adjustment' if any(signals.values()) else 'model_pred'
+            return adjusted, _compute_confidence(0, _structured_tokens_present(comment), strong_rule_applied, model_pred is not None, adjusted), reason
+        # If adjusted is 'unclear_insufficient_info', do NOT return yet.
+        # We'll apply the strict unclear gate later to avoid assigning unclear when usable content exists.
 
     # 4.5) Weak-signal, best-effort mapping before giving up
     # Combine available texts for lightweight heuristics
     combined_texts = []
-    comment = _norm(record.get('comment', ''))
+    # Do NOT overwrite the previously computed 'comment' (which prefers translated text)
     if comment:
         combined_texts.append(comment)
     for t in (ocr_texts or []):
@@ -611,31 +615,34 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
 
         # Connectivity weaker hints
         weak_connectivity = ["no internet", "network", "server", "timeout", "api", "internet nahi", "server down", "net problem"]
-        if _match_any(combined, weak_connectivity):
+        has_weak_conn = _match_any(combined, weak_connectivity)
+        if has_weak_conn:
             cat = 'connectivity_problems'
             reason = 'weak_signal_connectivity'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
         # Auth weaker hints
         weak_auth = ["otp", "signin", "sign in", "login", "password", "pin", "mpin", "forgot password"]
-        if _match_any(combined, weak_auth):
+        has_weak_auth = _match_any(combined, weak_auth)
+        if has_weak_auth:
             cat = 'authentication_access'
             reason = 'weak_signal_auth'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
         # Integration weaker hints
         weak_integration = ["printer", "bluetooth", "gateway", "upi", "payment", "transaction", "scan", "weighing scale", "barcode"]
-        if _match_any(combined, weak_integration):
+        has_weak_integration = _match_any(combined, weak_integration)
+        if has_weak_integration:
             cat = 'integration_failures'
             reason = 'weak_signal_integration'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
-        # UI/UX weaker hints: require two ui tokens
+        # UI/UX weaker hints: loosen to 1 token with guardrails (no conflicting weak auth/conn/integration and no generic functional hits)
         ui_tokens = ["button", "screen", "page", "icon", "font", "text", "label", "alignment", "visible", "display", "scroll", "cut off", "overlap"]
         ui_hits = [tok for tok in ui_tokens if tok in combined]
-        if len(ui_hits) >= 2:
+        if len(ui_hits) >= 1 and not (has_weak_auth or has_weak_conn or has_weak_integration) and len(generic_hits) == 0:
             cat = 'ui_ux_issues'
-            reason = 'weak_signal_uiux'
+            reason = 'weak_signal_uiux_loose'
             return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
         # Performance weaker hints
@@ -655,7 +662,24 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
             reason = 'fuzzy_quality'
             return cat, _compute_confidence(len(matched_kws) + 1, _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
-    # 4.8) If model has a prediction, prefer it over unclear
+        # Filename-driven weak signals if text was inconclusive
+        if filenames:
+            fn_join = " \n ".join(_norm(fn) for fn in filenames if fn)
+            if fn_join:
+                if any(tok in fn_join for tok in ui_tokens):
+                    cat = 'ui_ux_issues'
+                    reason = 'weak_signal_from_filename_ui'
+                    return cat, _compute_confidence(0, _structured_tokens_present(fn_join), strong_rule_applied, False, cat), reason
+                if any(tok in fn_join for tok in ["printer", "bluetooth", "gateway", "upi", "payment", "transaction", "scan", "weighing scale", "barcode"]):
+                    cat = 'integration_failures'
+                    reason = 'weak_signal_from_filename_integration'
+                    return cat, _compute_confidence(0, _structured_tokens_present(fn_join), strong_rule_applied, False, cat), reason
+                if any(tok in fn_join for tok in ["no internet", "network", "server", "timeout", "api", "internet nahi", "server down", "net problem"]):
+                    cat = 'connectivity_problems'
+                    reason = 'weak_signal_from_filename_connectivity'
+                    return cat, _compute_confidence(0, _structured_tokens_present(fn_join), strong_rule_applied, False, cat), reason
+
+    # 4.8) If model has a prediction, prefer it (non-unclear only at this stage)
     if model_pred and model_pred != 'unclear_insufficient_info':
         reason = 'model_pred'
         return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred), reason
