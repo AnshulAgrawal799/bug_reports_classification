@@ -250,8 +250,8 @@ class ImageCategorizationPipeline:
                 record_for_pred['comment_translated'] = translated_comment
             model_pred = self.predictor.predict_from_record(record_for_pred, ocr_texts=ocr_texts, filenames=filenames)
 
-        # Categorize using mapping rules (with OCR + filenames) and capture confidence
-        category, confidence = categorize_record_with_meta(
+        # Categorize using mapping rules (with OCR + filenames) and capture confidence and reason
+        category, confidence, reason = categorize_record_with_meta(
             temp_record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred
         )
 
@@ -259,6 +259,7 @@ class ImageCategorizationPipeline:
         updated_record = record.copy()
         updated_record['category'] = category
         updated_record['label_confidence'] = round(float(confidence), 2)
+        updated_record['label_reason'] = reason
         if any(t for t in ocr_texts):
             # Aggregate extracted text for downstream analysis
             updated_record['extracted_text'] = "\n\n".join([t for t in ocr_texts if t])

@@ -316,8 +316,12 @@ def categorize_from_comment(comment: str) -> Optional[str]:
     if _regex_any(t, [r"\b(lag( issue)?|app lag|slow|sluggish|takes too long)\b"]):
         return 'performance_issues'
 
-    # Connectivity issues
-    if _regex_any(t, [r"\b(net( ?issue)?|network|no internet|server down|timeout)\b"]):
+    # Connectivity issues (expand with localized phrases)
+    if _regex_any(t, [
+        r"\b(net( ?issue)?|network|no internet|server down|timeout)\b",
+        r"\b(internet nahi|net problem|server band|network down|server nahi)\b",
+        r"\b(नेट( ?समस्या)?|सर्वर डाउन|नेटवर्क समस्या)\b"
+    ]):
         return 'connectivity_problems'
 
     # Stop notifications request -> treat as feature/config request (user requested feature_requests)
@@ -340,8 +344,12 @@ def categorize_from_comment(comment: str) -> Optional[str]:
     if _match_any(t, ['unable to connect', 'no internet', 'network error', 'api failed', 'server error', 'timeout']):
         return 'connectivity_problems'
 
-    # Authentication & Access
-    if _match_any(t, ['login', 'sign in', 'authentication', 'password', 'otp', 'permission denied', 'access denied', 'session']):
+    # Authentication & Access (expanded locales)
+    if _match_any(t, ['login', 'sign in', 'authentication', 'password', 'otp', 'permission denied', 'access denied', 'session',
+                      'pin', 'mpin', 'forgot password']) or _regex_any(t, [
+        r"\b(otp nahi|otp नहीं|otp வரவில்லை|கடவுச்சொல்|पासवर्ड|लॉगिन|साइन इन)\b",
+        r"\b(otp not received|otp failed|cannot login|cant login)\b"
+    ]):
         return 'authentication_access'
 
     # Performance
@@ -352,8 +360,12 @@ def categorize_from_comment(comment: str) -> Optional[str]:
     if _match_any(t, ['crash', 'crashes', 'force close', 'stopped working', 'app closed unexpectedly']):
         return 'crash_stability'
 
-    # Integration (prioritize over generic "fails")
-    if _match_any(t, ['printer', 'bluetooth', 'weighing scale', 'payment gateway', 'google', 'firebase', 'upi', 'razorpay']):
+    # Integration (prioritize over generic "fails") with localized payment terms
+    if _match_any(t, ['printer', 'bluetooth', 'weighing scale', 'payment gateway', 'google', 'firebase', 'upi', 'razorpay', 'gateway', 'transaction failed']) or _regex_any(t, [
+        r"\b(bhim|phonepe|gpay|paytm|tez)\b",
+        r"\b(upi fail(ed)?|payment fail(ed)?|payment pending|gateway error)\b",
+        r"\b(यूपीआई|भुगतान|पेमेंट)\b"
+    ]):
         return 'integration_failures'
 
     # Configuration (prioritize over generic data issues)
@@ -402,8 +414,10 @@ def categorize_from_ocr(ocr_text: str) -> Optional[str]:
     if _match_any(t, ['error', 'exception', 'fatal', 'stack trace']):
         return 'functional_errors'
 
-    # Auth indicators on screen
-    if _match_any(t, ['sign in', 'login', 'password', 'otp']):
+    # Auth indicators on screen (expanded locales)
+    if _match_any(t, ['sign in', 'login', 'password', 'otp', 'pin', 'mpin']) or _regex_any(t, [
+        r"\b(otp nahi|otp नहीं|otp வரவில்லை|पासवर्ड|लॉगिन|साइन इन)\b"
+    ]):
         return 'authentication_access'
 
     # Network/API indicators
@@ -418,8 +432,11 @@ def categorize_from_ocr(ocr_text: str) -> Optional[str]:
     if _match_any(t, ['settings', 'preferences', 'configuration']):
         return 'configuration_settings'
 
-    # Payment/integration words
-    if _match_any(t, ['payment', 'transaction', 'gateway', 'upi', 'printer', 'bluetooth']):
+    # Payment/integration words (expanded)
+    if _match_any(t, ['payment', 'transaction', 'gateway', 'upi', 'printer', 'bluetooth']) or _regex_any(t, [
+        r"\b(bhim|phonepe|gpay|paytm|tez)\b",
+        r"\b(upi fail(ed)?|payment fail(ed)?|payment pending|gateway error)\b"
+    ]):
         return 'integration_failures'
 
     # Data integrity clues
@@ -481,7 +498,7 @@ def _compute_confidence(matched_keywords: int, structured_present: bool, strong_
     return float(max(0.0, min(0.99, conf)))
 
 
-def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> Tuple[str, float]:
+def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> Tuple[str, float, str]:
     """
     Determine the best category for a record using deterministic heuristics with rules.json.
     Priority order:
@@ -493,14 +510,18 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
       6) Best-effort weak signals
       7) Strict unclear gate
     """
-    comment = _norm(record.get('comment', ''))
+    # Prefer translated comment if present
+    effective_comment_raw = record.get('comment_translated') or record.get('comment', '')
+    comment = _norm(effective_comment_raw)
     strong_rule_applied = False
+    reason = 'unknown'
 
     # 1) Comment
     c = categorize_from_comment(comment)
     if c:
         strong_rule_applied = True
-        return c, _compute_confidence(0, False, True, False, c)
+        reason = 'strong_comment_regex'
+        return c, _compute_confidence(0, False, True, False, c), reason
 
     # 2) OCR
     if ocr_texts:
@@ -508,7 +529,8 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
             cat = categorize_from_ocr(t)
             if cat:
                 strong_rule_applied = True
-                return cat, _compute_confidence(0, False, True, False, cat)
+                reason = 'strong_ocr_regex'
+                return cat, _compute_confidence(0, False, True, False, cat), reason
 
     # 3) Filename
     if filenames:
@@ -516,7 +538,8 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
             cat = categorize_from_filename(fn)
             if cat:
                 strong_rule_applied = True
-                return cat, _compute_confidence(0, False, True, False, cat)
+                reason = 'filename_rule'
+                return cat, _compute_confidence(0, False, True, False, cat), reason
 
     # 3.5) Keyword mapping from rules.json across combined comment + OCR
     combined_texts: List[str] = []
@@ -529,7 +552,8 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
     matched_kws, matched_cats = _keyword_matches(combined)
     if matched_cats:
         resolved = _resolve_by_priority(matched_cats)
-        return resolved or 'functional_errors', _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, resolved or 'functional_errors')
+        reason = 'regex_map' if any(k.startswith('re:') for k in matched_kws) else 'keyword_map'
+        return resolved or 'functional_errors', _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, resolved or 'functional_errors'), reason
 
     # 4) Post-adjustment
     signals = {
@@ -539,7 +563,8 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
     }
     adjusted = post_adjustment(model_pred, signals)
     if adjusted:
-        return adjusted, _compute_confidence(0, _structured_tokens_present(comment), strong_rule_applied, model_pred is not None, adjusted)
+        reason = 'post_adjustment'
+        return adjusted, _compute_confidence(0, _structured_tokens_present(comment), strong_rule_applied, model_pred is not None, adjusted), reason
 
     # 4.5) Weak-signal, best-effort mapping before giving up
     # Combine available texts for lightweight heuristics
@@ -561,53 +586,98 @@ def categorize_record_with_meta(record: Dict, ocr_texts: Optional[List[str]] = N
         mismatch_words = ["wrong", "mismatch", "not matching", "less", "more", "only", "difference"]
         if (number_present and currency_present) or _match_any(combined, mismatch_words):
             cat = 'data_integrity_issues'
-            return cat, _compute_confidence(len(matched_kws), True, strong_rule_applied, False, cat)
+            reason = 'weak_signal_data_integrity'
+            return cat, _compute_confidence(len(matched_kws), True, strong_rule_applied, False, cat), reason
 
-        # Generic error/functionality hints
-        generic_error_hints = ["error", "fail", "failed", "not working", "does not work", "unable", "stuck", "cannot", "can't"]
-        if _match_any(combined, generic_error_hints):
+        # Generic error/functionality hints (tightened)
+        generic_error_tokens = ["error", "fail", "failed", "not working", "does not work", "unable", "stuck", "cannot", "can't"]
+        generic_hits = [tok for tok in generic_error_tokens if tok in combined]
+        has_structured = _structured_tokens_present(combined)
+        if len(generic_hits) >= 2 or (len(generic_hits) >= 1 and has_structured):
             cat = 'functional_errors'
-            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
+            reason = 'weak_signal_generic_strong'
+            return cat, _compute_confidence(len(matched_kws), has_structured, strong_rule_applied, False, cat), reason
+        # If only 1 weak generic hint and no structured signals, avoid over-routing
+        if len(generic_hits) == 1 and not has_structured:
+            # Prefer model prediction if present
+            if model_pred and model_pred != 'unclear_insufficient_info':
+                reason = 'model_pred_weak_generic'
+                return model_pred, _compute_confidence(len(matched_kws), has_structured, strong_rule_applied, True, model_pred), reason
+            # Or fallback to UI/UX if UI words present
+            if _match_any(combined, ["button", "screen", "page", "icon", "text", "label", "alignment", "visible", "display"]):
+                cat = 'ui_ux_issues'
+                reason = 'weak_signal_uiux_from_generic'
+                return cat, _compute_confidence(len(matched_kws), has_structured, strong_rule_applied, False, cat), reason
 
         # Connectivity weaker hints
-        weak_connectivity = ["no internet", "network", "server", "timeout", "api"]
+        weak_connectivity = ["no internet", "network", "server", "timeout", "api", "internet nahi", "server down", "net problem"]
         if _match_any(combined, weak_connectivity):
             cat = 'connectivity_problems'
-            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
+            reason = 'weak_signal_connectivity'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
         # Auth weaker hints
-        weak_auth = ["otp", "signin", "sign in", "login", "password", "pin"]
+        weak_auth = ["otp", "signin", "sign in", "login", "password", "pin", "mpin", "forgot password"]
         if _match_any(combined, weak_auth):
             cat = 'authentication_access'
-            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat)
+            reason = 'weak_signal_auth'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
+
+        # Integration weaker hints
+        weak_integration = ["printer", "bluetooth", "gateway", "upi", "payment", "transaction", "scan", "weighing scale", "barcode"]
+        if _match_any(combined, weak_integration):
+            cat = 'integration_failures'
+            reason = 'weak_signal_integration'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
+
+        # UI/UX weaker hints: require two ui tokens
+        ui_tokens = ["button", "screen", "page", "icon", "font", "text", "label", "alignment", "visible", "display", "scroll", "cut off", "overlap"]
+        ui_hits = [tok for tok in ui_tokens if tok in combined]
+        if len(ui_hits) >= 2:
+            cat = 'ui_ux_issues'
+            reason = 'weak_signal_uiux'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
+
+        # Performance weaker hints
+        perf_tokens = ["slow", "lag", "loading", "hang", "hanging", "sluggish", "takes too long", "please wait", "processing"]
+        if _match_any(combined, perf_tokens) and not _match_any(combined, ["success", "completed", "done"]):
+            cat = 'performance_issues'
+            reason = 'weak_signal_performance'
+            return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
         # Fuzzy small-token heuristics
         if _fuzzy_contains(combined, 'coins'):
             cat = 'data_integrity_issues'
-            return cat, _compute_confidence(len(matched_kws) + 1, True, strong_rule_applied, False, cat)
+            reason = 'fuzzy_data_integrity'
+            return cat, _compute_confidence(len(matched_kws) + 1, True, strong_rule_applied, False, cat), reason
         if _fuzzy_contains(combined, 'quality') or _fuzzy_contains(combined, 'damage'):
             cat = 'product_quality_issues'
-            return cat, _compute_confidence(len(matched_kws) + 1, _structured_tokens_present(combined), strong_rule_applied, False, cat)
+            reason = 'fuzzy_quality'
+            return cat, _compute_confidence(len(matched_kws) + 1, _structured_tokens_present(combined), strong_rule_applied, False, cat), reason
 
     # 4.8) If model has a prediction, prefer it over unclear
     if model_pred and model_pred != 'unclear_insufficient_info':
-        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred)
+        reason = 'model_pred'
+        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred), reason
 
     # 5) Final decision with strict unclear gate
     if allow_unclear_label(record, ocr_texts=ocr_texts, filenames=filenames):
-        return 'unclear_insufficient_info', 0.3
+        reason = 'unclear_gate'
+        return 'unclear_insufficient_info', 0.3, reason
 
     # If we reach here, there is usable content but no strong/weak match.
     # Prefer model prediction if any; otherwise default to a generic, action-oriented class.
     if model_pred:
-        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred)
+        reason = 'model_pred_fallback'
+        return model_pred, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, True, model_pred), reason
     cat = 'functional_errors'
-    return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, False, cat)
+    reason = 'default_fallback'
+    return cat, _compute_confidence(len(matched_kws), _structured_tokens_present(comment), strong_rule_applied, False, cat), reason
 
 
 def categorize_record(record: Dict, ocr_texts: Optional[List[str]] = None, filenames: Optional[List[str]] = None, model_pred: Optional[str] = None) -> str:
     """Backward-compatible wrapper returning only category."""
-    cat, _conf = categorize_record_with_meta(record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
+    cat, _conf, _reason = categorize_record_with_meta(record, ocr_texts=ocr_texts, filenames=filenames, model_pred=model_pred)
     return cat
 
 
