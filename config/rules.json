@@ -29,7 +29,12 @@
     "\\b(quality|qualit[yai]?|quali?ty|qulity|qualiy|bad quality|quality issue|damaged|damage|spoil(ed)?|spoilt|waste|dented)\\b": "product_quality_issues",
     "(குவாலிட்டி|குவாலிடி|குவாலிட்டி சரியில்லை|காய் குவாலிட்டி|கெட்ட|பாழான|பழுதான|சேதம|கேடு)": "product_quality_issues",
     "(क्वालिटी|गुणवत्ता|डैमेज|टूटा|खराब|सड़ा|टूटी|डैमेज्ड)": "product_quality_issues",
-    "\\b(quality me problem hai|quality kharab hai|quality sahi nahi)\\b": "product_quality_issues"
+    "\\b(quality me problem hai|quality kharab hai|quality sahi nahi)\\b": "product_quality_issues",
+    "(உடைந்த|ஒடிந்த)": "product_quality_issues",
+    "\\b(worst quality|very bad quality|poor quality)\\b": "product_quality_issues",
+    "\\b(qualty|qulity|qlty|qlt)\\b": "product_quality_issues",
+    "\\b(kai|kayi|sabji)\\s+quality\\b": "product_quality_issues",
+    "(टूटा हुआ|टूटी हुई)": "product_quality_issues"
   },
     "structured_token_regex": {
       "date": "\\b\\d{4}[-/]\\d{2}[-/]\\d{2}\\b",
